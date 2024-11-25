@@ -1,12 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FUT</title>
-    <link href="./output.css" rel="stylesheet">
+    <link href="src/output.css" rel="stylesheet">
 </head>
+
 <body>
-    
+    <div class="bg-black flex w-screen h-screen">
+        <!-- Left section (Image) -->
+        <div class="bg-[] w-3/4 p-10 flex justify-center items-center ">
+            <img class="w-2/3 h-auto rounded-lg shadow-lg" src="img/foot.webp" alt="Football Strategy Image">
+        </div>
+
+        <!-- Right section (Select dropdown) -->
+        <div class="w-1/4 p-10 bg-gray-800 rounded-lg flex flex-col justify-between items-center">
+            <div class="flex flex-col gap-4 items-center">
+                <section class="text-white flex flex-row">
+                    <p class="text-7xl text-green-400">102</p>
+                    <p>over</p>
+                </section>
+                <section class="text-white flex flex-row">
+                    <p class="text-7xl text-yellow-300">80%</p>
+                    <p>Agreement</p>
+                </section>
+            </div>
+            <select class="bg-gray-700 text-white p-2 rounded-md border-none focus:outline-none w-full">
+                <option value="">Select Strategy</option>
+                <option value="4-3-3">4-3-3</option>
+                <option value="4-4-2">4-4-2</option>
+                <option value="3-5-2">3-5-2</option>
+                <option value="4-2-3-1">4-2-3-1</option>
+                <option value="5-3-2">5-3-2</option>
+                <option value="3-4-3">3-4-3</option>
+                <option value="4-1-4-1">4-1-4-1</option>
+                <option value="4-4-1-1">4-4-1-1</option>
+                <option value="5-4-1">5-4-1</option>
+            </select>
+        </div>
+    </div>
 </body>
+
 </html>
