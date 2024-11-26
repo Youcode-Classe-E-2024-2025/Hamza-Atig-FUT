@@ -9,14 +9,36 @@
 </head>
 
 <body>
-    <div class="bg-black flex w-screen h-screen">
+    <div class="bg-[url('/img/bg.jpeg')] bg-cover bg-center flex w-screen h-screen">
         <!-- Left section (Image) -->
-        <div class="bg-[] w-3/4 p-10 flex justify-center items-center ">
-            <img class="w-2/3 h-auto rounded-lg shadow-lg" src="img/foot.webp" alt="Football Strategy Image">
+        <div class="bg-black bg-opacity-75 w-3/4 p-10 flex justify-center items-center ">
+            <img class="w-3/4 h-auto rounded-lg shadow-lg" src="img/foot.webp" alt="Football Strategy Image">
+            <!-- Layer Of Left section -->
+            <div class="absolute h-screen grid grid-cols-9 grid-rows-11">
+                <!-- GK -->
+                <img class="col-start-5 row-start-9 transition duration-300 ease-in-out hover:scale-105" src="img/BASIC.png" alt="">
+                <!-- CB -->
+                <img class="col-start-4 row-start-7 transition duration-300 ease-in-out hover:scale-105" src="img/BASIC.png" alt="">
+                <img class="col-start-6 row-start-7 transition duration-300 ease-in-out hover:scale-105" src="img/BASIC.png" alt="">
+                <!-- RB -->
+                <img class="col-start-7 row-start-7 transition duration-300 ease-in-out hover:scale-105" src="img/BASIC.png" alt="">
+                <!-- LB -->
+                <img class="col-start-3 row-start-7 transition duration-300 ease-in-out hover:scale-105" src="img/BASIC.png" alt="">
+                <!-- CM -->
+                <img class="col-start-4 row-start-5 transition duration-300 ease-in-out hover:scale-105" src="img/BASIC.png" alt="">
+                <img class="col-start-5 row-start-5 transition duration-300 ease-in-out hover:scale-105" src="img/BASIC.png" alt="">
+                <img class="col-start-6 row-start-5 transition duration-300 ease-in-out hover:scale-105" src="img/BASIC.png" alt="">
+                <!-- RW -->
+                <img class="col-start-3 row-start-3 transition duration-300 ease-in-out hover:scale-105" src="img/BASIC.png" alt="">
+                <!-- ST -->
+                <img class="col-start-5 row-start-2 transition duration-300 ease-in-out hover:scale-105" src="img/BASIC.png" alt="">
+                <!-- LW -->
+                <img class="col-start-7 row-start-3 transition duration-300 ease-in-out hover:scale-105" src="img/BASIC.png" alt="">
+            </div>
         </div>
 
         <!-- Right section (Select dropdown) -->
-        <div class="w-1/4 p-10 bg-gray-800 rounded-lg flex flex-col justify-between items-center">
+        <div class="w-1/4 p-10 bg-gray-900 rounded-lg flex flex-col justify-between items-center">
             <div class="flex flex-col gap-4 items-center">
                 <section class="text-white flex flex-row">
                     <p class="text-7xl text-green-400">102</p>
@@ -27,18 +49,26 @@
                     <p>Agreement</p>
                 </section>
             </div>
-            <select class="bg-gray-700 text-white p-2 rounded-md border-none focus:outline-none w-full">
-                <option value="">Select Strategy</option>
-                <option value="4-3-3">4-3-3</option>
-                <option value="4-4-2">4-4-2</option>
-                <option value="3-5-2">3-5-2</option>
-                <option value="4-2-3-1">4-2-3-1</option>
-                <option value="5-3-2">5-3-2</option>
-                <option value="3-4-3">3-4-3</option>
-                <option value="4-1-4-1">4-1-4-1</option>
-                <option value="4-4-1-1">4-4-1-1</option>
-                <option value="5-4-1">5-4-1</option>
-            </select>
+            <div class="w-full flex flex-col gap-6">
+                <select class="bg-gray-700 text-white p-2 rounded-md border-none focus:outline-none w-full">
+                    <option value="4-3-3">4-3-3</option>
+                    <option value="4-4-2">4-4-2</option>
+                    <option value="3-5-2">3-5-2</option>
+                    <option value="4-2-3-1">4-2-3-1</option>
+                    <option value="5-3-2">5-3-2</option>
+                    <option value="3-4-3">3-4-3</option>
+                    <option value="4-1-4-1">4-1-4-1</option>
+                    <option value="4-4-1-1">4-4-1-1</option>
+                    <option value="5-4-1">5-4-1</option>
+                </select>
+                <select class="bg-gray-700 text-white p-2 rounded-md border-none focus:outline-none w-full">
+                    <option value="default" selected>Basic Card</option>
+                    <option value="image1">EVENT Card</option>
+                    <option value="image2">TOTW Card</option>
+                    <option value="image3">STARS Card</option>
+                    <option value="image4">ICONS Card</option>
+                </select>
+            </div>
         </div>
     </div>
 </body>
