@@ -95,6 +95,22 @@ function updateFormation(formation) {
                 "LW": { col: 7, row: 2 }
             });
             break;
+        case "3-4-3":
+            // 3-4-3 Formation
+            setPositions({
+                "GK": { col: 6, row: 10 },
+                "CB1": { col: 4, row: 7 },
+                "CB2": { col: 6, row: 8 },
+                "RB": { col: 8, row: 7 },
+                "LB": { col: 6, row: 3 },
+                "CM1": { col: 5, row: 5 },
+                "CM2": { col: 7, row: 5 },
+                "CM3": { col: 4, row: 4 },
+                "RW": { col: 8, row: 4 },
+                "ST": { col: 5, row: 2 },
+                "LW": { col: 7, row: 2 }
+            });
+            break;
 
     }
 }
