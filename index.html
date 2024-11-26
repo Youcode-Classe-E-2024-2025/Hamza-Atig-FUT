@@ -10,34 +10,31 @@
 
 <body>
     <div class="bg-[url('/img/bg.jpeg')] bg-cover bg-center flex w-screen h-screen">
-        <!-- Left section (Image) -->
+        <!-- Left section -->
         <div class="bg-black bg-opacity-75 w-3/4 p-10 flex justify-center items-center ">
             <img class="w-3/4 h-auto rounded-lg shadow-lg" src="img/foot.webp" alt="Football Strategy Image">
             <!-- Layer Of Left section -->
-            <div class="absolute h-screen grid grid-cols-9 grid-rows-11">
-                <!-- GK -->
-                <img class="col-start-5 row-start-9 transition duration-300 ease-in-out hover:scale-105" src="img/BASIC.png" alt="">
-                <!-- CB -->
-                <img class="col-start-4 row-start-7 transition duration-300 ease-in-out hover:scale-105" src="img/BASIC.png" alt="">
-                <img class="col-start-6 row-start-7 transition duration-300 ease-in-out hover:scale-105" src="img/BASIC.png" alt="">
-                <!-- RB -->
-                <img class="col-start-7 row-start-7 transition duration-300 ease-in-out hover:scale-105" src="img/BASIC.png" alt="">
-                <!-- LB -->
-                <img class="col-start-3 row-start-7 transition duration-300 ease-in-out hover:scale-105" src="img/BASIC.png" alt="">
-                <!-- CM -->
-                <img class="col-start-4 row-start-5 transition duration-300 ease-in-out hover:scale-105" src="img/BASIC.png" alt="">
-                <img class="col-start-5 row-start-5 transition duration-300 ease-in-out hover:scale-105" src="img/BASIC.png" alt="">
-                <img class="col-start-6 row-start-5 transition duration-300 ease-in-out hover:scale-105" src="img/BASIC.png" alt="">
-                <!-- RW -->
-                <img class="col-start-3 row-start-3 transition duration-300 ease-in-out hover:scale-105" src="img/BASIC.png" alt="">
-                <!-- ST -->
-                <img class="col-start-5 row-start-2 transition duration-300 ease-in-out hover:scale-105" src="img/BASIC.png" alt="">
-                <!-- LW -->
-                <img class="col-start-7 row-start-3 transition duration-300 ease-in-out hover:scale-105" src="img/BASIC.png" alt="">
+            <div class="absolute h-screen grid grid-cols-11 grid-rows-12" id="pitch">
+                <!-- 4-3-3 -->
+                <img class="col-start-6 row-start-10 transition duration-300 ease-in-out hover:scale-105 card-image" data-card="GK" src="img/Cards/BASIC.png" alt="">
+                
+                <img class="col-start-5 row-start-8 transition duration-300 ease-in-out hover:scale-105 card-image" data-card="CB1" src="img/Cards/BASIC.png" alt="">
+                <img class="col-start-7 row-start-8 transition duration-300 ease-in-out hover:scale-105 card-image" data-card="CB2" src="img/Cards/BASIC.png" alt="">
+            
+                <img class="col-start-9 row-start-9 transition duration-300 ease-in-out hover:scale-105 card-image" data-card="RB" src="img/Cards/BASIC.png" alt="">
+                <img class="col-start-3 row-start-9 transition duration-300 ease-in-out hover:scale-105 card-image" data-card="LB" src="img/Cards/BASIC.png" alt="">
+            
+                <img class="col-start-4 row-start-5 transition duration-300 ease-in-out hover:scale-105 card-image" data-card="CM1" src="img/Cards/BASIC.png" alt="">
+                <img class="col-start-6 row-start-5 transition duration-300 ease-in-out hover:scale-105 card-image" data-card="CM2" src="img/Cards/BASIC.png" alt="">
+                <img class="col-start-8 row-start-5 transition duration-300 ease-in-out hover:scale-105 card-image" data-card="CM3" src="img/Cards/BASIC.png" alt="">
+            
+                <img class="col-start-4 row-start-3 transition duration-300 ease-in-out hover:scale-105 card-image" data-card="RW" src="img/Cards/BASIC.png" alt="">
+                <img class="col-start-6 row-start-2 transition duration-300 ease-in-out hover:scale-105 card-image" data-card="ST" src="img/Cards/BASIC.png" alt="">
+                <img class="col-start-8 row-start-3 transition duration-300 ease-in-out hover:scale-105 card-image" data-card="LW" src="img/Cards/BASIC.png" alt="">
             </div>
         </div>
 
-        <!-- Right section (Select dropdown) -->
+        <!-- Right section -->
         <div class="w-1/4 p-10 bg-gray-900 rounded-lg flex flex-col justify-between items-center">
             <div class="flex flex-col gap-4 items-center">
                 <section class="text-white flex flex-row">
@@ -50,7 +47,7 @@
                 </section>
             </div>
             <div class="w-full flex flex-col gap-6">
-                <select class="bg-gray-700 text-white p-2 rounded-md border-none focus:outline-none w-full">
+                <select id="strategy" class="bg-gray-700 text-white p-2 rounded-md border-none focus:outline-none w-full">
                     <option value="4-3-3">4-3-3</option>
                     <option value="4-4-2">4-4-2</option>
                     <option value="3-5-2">3-5-2</option>
@@ -61,16 +58,37 @@
                     <option value="4-4-1-1">4-4-1-1</option>
                     <option value="5-4-1">5-4-1</option>
                 </select>
-                <select class="bg-gray-700 text-white p-2 rounded-md border-none focus:outline-none w-full">
+
+                <select id="cardSelect"
+                    class="bg-gray-700 text-white p-2 rounded-md border-none focus:outline-none w-full">
                     <option value="default" selected>Basic Card</option>
-                    <option value="image1">EVENT Card</option>
-                    <option value="image2">TOTW Card</option>
-                    <option value="image3">STARS Card</option>
-                    <option value="image4">ICONS Card</option>
+                    <option value="image4">TOTY Card</option>
+                    <option value="image5">TOTS Card</option>
                 </select>
+                <script>
+                    document.getElementById('cardSelect').addEventListener('change', function () {
+                        const selectedCard = this.value;
+                        const images = document.querySelectorAll('.card-image');
+
+                        images.forEach(img => {
+                            switch (selectedCard) {
+                                case 'image4':
+                                    img.src = 'img/Cards/TOTY.png';
+                                    break;
+                                case 'image5':
+                                    img.src = 'img/Cards/TOTS.gif';
+                                    break;
+                                default:
+                                    img.src = 'img/Cards/Basic.png';
+                                    break;
+                            }
+                        });
+                    });
+                </script>
             </div>
         </div>
     </div>
+    <script src="script.js"></script>
 </body>
 
 </html>
