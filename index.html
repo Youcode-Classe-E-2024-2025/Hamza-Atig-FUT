@@ -16,22 +16,50 @@
             <!-- Layer Of Left section -->
             <div class="absolute h-screen grid grid-cols-11 grid-rows-12" id="pitch">
                 <!-- 4-3-3 -->
-                <img class="col-start-6 row-start-10 transition duration-300 ease-in-out hover:scale-105 card-image" data-card="GK" src="img/Cards/BASIC.png" alt="">
-                
-                <img class="col-start-5 row-start-8 transition duration-300 ease-in-out hover:scale-105 card-image" data-card="CB1" src="img/Cards/BASIC.png" alt="">
-                <img class="col-start-7 row-start-8 transition duration-300 ease-in-out hover:scale-105 card-image" data-card="CB2" src="img/Cards/BASIC.png" alt="">
-            
-                <img class="col-start-9 row-start-9 transition duration-300 ease-in-out hover:scale-105 card-image" data-card="RB" src="img/Cards/BASIC.png" alt="">
-                <img class="col-start-3 row-start-9 transition duration-300 ease-in-out hover:scale-105 card-image" data-card="LB" src="img/Cards/BASIC.png" alt="">
-            
-                <img class="col-start-4 row-start-5 transition duration-300 ease-in-out hover:scale-105 card-image" data-card="CM1" src="img/Cards/BASIC.png" alt="">
-                <img class="col-start-6 row-start-5 transition duration-300 ease-in-out hover:scale-105 card-image" data-card="CM2" src="img/Cards/BASIC.png" alt="">
-                <img class="col-start-8 row-start-5 transition duration-300 ease-in-out hover:scale-105 card-image" data-card="CM3" src="img/Cards/BASIC.png" alt="">
-            
-                <img class="col-start-4 row-start-3 transition duration-300 ease-in-out hover:scale-105 card-image" data-card="RW" src="img/Cards/BASIC.png" alt="">
-                <img class="col-start-6 row-start-2 transition duration-300 ease-in-out hover:scale-105 card-image" data-card="ST" src="img/Cards/BASIC.png" alt="">
-                <img class="col-start-8 row-start-3 transition duration-300 ease-in-out hover:scale-105 card-image" data-card="LW" src="img/Cards/BASIC.png" alt="">
+                <img class="col-start-6 row-start-10 transition duration-300 ease-in-out hover:scale-105 card-image"
+                    data-card="GK" src="img/Cards/BASIC.png" alt="">
+
+                <img class="col-start-5 row-start-8 transition duration-300 ease-in-out hover:scale-105 card-image"
+                    data-card="CB1" src="img/Cards/BASIC.png" alt="">
+                <img class="col-start-7 row-start-8 transition duration-300 ease-in-out hover:scale-105 card-image"
+                    data-card="CB2" src="img/Cards/BASIC.png" alt="">
+
+                <img class="col-start-9 row-start-9 transition duration-300 ease-in-out hover:scale-105 card-image"
+                    data-card="RB" src="img/Cards/BASIC.png" alt="">
+                <img class="col-start-3 row-start-9 transition duration-300 ease-in-out hover:scale-105 card-image"
+                    data-card="LB" src="img/Cards/BASIC.png" alt="">
+
+                <img class="col-start-4 row-start-5 transition duration-300 ease-in-out hover:scale-105 card-image"
+                    data-card="CM1" src="img/Cards/BASIC.png" alt="">
+                <img class="col-start-6 row-start-5 transition duration-300 ease-in-out hover:scale-105 card-image"
+                    data-card="CM2" src="img/Cards/BASIC.png" alt="">
+                <img class="col-start-8 row-start-5 transition duration-300 ease-in-out hover:scale-105 card-image"
+                    data-card="CM3" src="img/Cards/BASIC.png" alt="">
+
+                <img class="col-start-4 row-start-3 transition duration-300 ease-in-out hover:scale-105 card-image"
+                    data-card="RW" src="img/Cards/BASIC.png" alt="">
+                <img class="col-start-6 row-start-2 transition duration-300 ease-in-out hover:scale-105 card-image"
+                    data-card="ST" src="img/Cards/BASIC.png" alt="">
+                <img class="col-start-8 row-start-3 transition duration-300 ease-in-out hover:scale-105 card-image"
+                    data-card="LW" src="img/Cards/BASIC.png" alt="">
             </div>
+
+            <!-- Modal -->
+            <div id="player-modal"
+                class="hidden fixed inset-0 bg-gray-800 bg-opacity-70 z-50 flex items-center justify-center">
+                <div class="bg-black rounded-lg p-4 w-1/2 max-h-[80%] overflow-hidden">
+                    <div class="flex justify-between items-center">
+                        <h2 id="player-position" class="text-white text-2xl font-bold">Players</h2>
+                        <button id="close-modal" class="text-red-600 bg-white hover:bg-red-600 hover:text-white p-2 rounded-lg">Close</button>
+                    </div>
+
+                    <!-- Scrollable list of players -->
+                    <div id="players-list" class="overflow-y-auto mt-4 max-h-96 ">
+                        <!-- Players will be inserted here dynamically -->
+                    </div>
+                </div>
+            </div>
+
         </div>
 
         <!-- Right section -->
@@ -47,7 +75,8 @@
                 </section>
             </div>
             <div class="w-full flex flex-col gap-6">
-                <select id="strategy" class="bg-gray-700 text-white p-2 rounded-md border-none focus:outline-none w-full">
+                <select id="strategy"
+                    class="bg-gray-700 text-white p-2 rounded-md border-none focus:outline-none w-full">
                     <option value="4-3-3">4-3-3</option>
                     <option value="4-4-2">4-4-2</option>
                     <option value="3-5-2">3-5-2</option>
@@ -55,8 +84,6 @@
                     <option value="5-3-2">5-3-2</option>
                     <option value="3-4-3">3-4-3</option>
                     <option value="4-1-4-1">4-1-4-1</option>
-                    <option value="4-4-1-1">4-4-1-1</option>
-                    <option value="5-4-1">5-4-1</option>
                 </select>
 
                 <select id="cardSelect"

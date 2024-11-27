@@ -140,3 +140,245 @@ function setPositions(positions) {
         }
     }
 }
+
+
+const playersData = [
+    {
+        name: "Alisson Becker",
+        physique: "6'3\"",
+        pace: "50",
+        rating: "88",
+        shot: "65",
+        pass: "75",
+        defense: "85",
+        dribble: "60",
+        physical: "80",
+        img: "img/GK/alisson.avif"
+    },
+    {
+        name: "Hugo Lloris",
+        physique: "6'1\"",
+        pace: "52",
+        rating: "85",
+        shot: "60",
+        pass: "70",
+        defense: "80",
+        dribble: "55",
+        physical: "75",
+        img: "img/GK/hugo.avif"
+    },
+    {
+        name: "Ruud Gullit",
+        physique: "6'4\"",
+        pace: "93",
+        rating: "94",
+        shot: "90",
+        pass: "85",
+        defense: "80",
+        dribble: "88",
+        physical: "90",
+        img: "img/CB/gullit.png"
+    },
+    {
+        name: "Virgil van Dijk",
+        physique: "6'4\"",
+        pace: "80",
+        rating: "90",
+        shot: "75",
+        pass: "80",
+        defense: "95",
+        dribble: "70",
+        physical: "85",
+        img: "img/CB/vand.png"
+    },
+    {
+        name: "Sergio Ramos",
+        physique: "6'0\"",
+        pace: "77",
+        rating: "88",
+        shot: "70",
+        pass: "80",
+        defense: "88",
+        dribble: "75",
+        physical: "85",
+        img: "img/CB/ramos.avif"
+    },
+    {
+        name: "Trent Alexander-Arnold",
+        physique: "5'9\"",
+        pace: "83",
+        rating: "87",
+        shot: "70",
+        pass: "90",
+        defense: "75",
+        dribble: "85",
+        physical: "70",
+        img: "img/RB/arnold.avif"
+    },
+    {
+        name: "Kyle Walker",
+        physique: "6'0\"",
+        pace: "89",
+        rating: "85",
+        shot: "60",
+        pass: "75",
+        defense: "80",
+        dribble: "85",
+        physical: "80",
+        img: "img/RB/Walker.avif"
+    },
+    {
+        name: "Andrew Robertson",
+        physique: "5'10\"",
+        pace: "80",
+        rating: "87",
+        shot: "65",
+        pass: "80",
+        defense: "85",
+        dribble: "80",
+        physical: "75",
+        img: "img/LB/robertson.avif"
+    },
+    {
+        name: "Kevin De Bruyne",
+        physique: "5'11\"",
+        pace: "75",
+        rating: "91",
+        shot: "85",
+        pass: "95",
+        defense: "60",
+        dribble: "85",
+        physical: "70",
+        img: "img/CM/debruyn.avif"
+    },
+    {
+        name: "Luka Modrić",
+        physique: "5'9\"",
+        pace: "72",
+        rating: "89",
+        shot: "70",
+        pass: "90",
+        defense: "65",
+        dribble: "88",
+        physical: "70",
+        img: "img/CM/modric.avif"
+    },
+    {
+        name: "Paul Pogba",
+        physique: "6'3\"",
+        pace: "80",
+        rating: "85",
+        shot: "75",
+        pass: "80",
+        defense: "85",
+        dribble: "80",
+        physical: "85",
+        img: "img/CM/pogba.avif"
+    },
+    {
+        name: "Mohamed Salah",
+        physique: "5'9\"",
+        pace: "92",
+        rating: "89",
+        shot: "90",
+        pass: "80",
+        defense: "60",
+        dribble: "85",
+        physical: "75",
+        img: "img/RW/salah.avif"
+    },
+    {
+        name: "Jadon Sancho",
+        physique: "5'11\"",
+        pace: "85",
+        rating: "86",
+        shot: "80",
+        pass: "85",
+        defense: "60",
+        dribble: "88",
+        physical: "70",
+        img: "img/RW/sancho.avif"
+    },
+    {
+        name: "Cristiano Ronaldo",
+        physique: "6'2\"",
+        pace: "85",
+        rating: "118",
+        shot: "95",
+        pass: "75",
+        defense: "60",
+        dribble: "80",
+        physical: "85",
+        img: "img/ST/cr.avif"
+    },
+    {
+        name: "Robert Lewandowski",
+        physique: "6'0\"",
+        pace: "80",
+        rating: "92",
+        shot: "90",
+        pass: "80",
+        defense: "65",
+        dribble: "80",
+        physical: "85",
+        img: "img/ST/lewandowski.avif"
+    },
+    {
+        name: "Sadio Mané",
+        physique: "5'9\"",
+        pace: "88",
+        rating: "89",
+        shot: "85",
+        pass: "75",
+        defense: "60",
+        dribble: "90",
+        physical: "80",
+        img: "img/LW/mane.avif"
+    },
+    {
+        name: "Raheem Sterling",
+        physique: "5'7\"",
+        pace: "87",
+        rating: "86",
+        shot: "80",
+        pass: "75",
+        defense: "65",
+        dribble: "90",
+        physical: "70",
+        img: "img/LW/sterling.avif"
+    }
+];
+
+// Show Player Modal function
+function showPlayerModal() {
+    const playersList = document.getElementById('players-list');
+    
+    let playersHTML = '';
+    
+    playersData.forEach(player => {
+        playersHTML += `
+            <div class="flex items-center space-x-4 cursor-pointer mb-4" onclick="updatePlayerOnPitch('${player.name}', '${player.position}')">
+                <img src="${player.img}" alt="${player.name}" class="w-12 h-12 rounded-full">
+                <div class="text-white">
+                    <p class="font-bold text-lg">${player.name}</p>
+                    <p class="text-sm text-gray-300">Rating: ${player.rating}</p>
+                </div>
+            </div>
+        `;
+    });
+    
+    playersList.innerHTML = playersHTML;
+
+    document.getElementById('player-modal').classList.remove('hidden');
+}
+
+const pitchImages = document.querySelectorAll('.card-image');
+pitchImages.forEach(img => {
+    img.addEventListener('click', () => {
+        showPlayerModal();
+    });
+});
+
+document.getElementById('close-modal').addEventListener('click', () => {
+    document.getElementById('player-modal').classList.add('hidden');
+});
