@@ -367,14 +367,13 @@ const playersData = [
 ];
 
 // Show Player Modal function
-function showPlayerModal() {
+function showPlayerModal(card) {
     const playersList = document.getElementById('players-list');
-    
     let playersHTML = '';
     
     playersData.forEach(player => {
         playersHTML += `
-            <div class="flex flex-row cursor-pointer mb-4 justify-between align-middle">
+            <div class="flex flex-row cursor-pointer mb-4 justify-between align-middle" data-player="${player.name}" data-position="${player.position}" data-card="${card}">
                 <div class="flex items-center space-x-4">
                     <img src="${player.img}" alt="${player.name}" class="w-12 h-12 rounded-full">
                     <div class="text-white">
@@ -388,17 +387,111 @@ function showPlayerModal() {
     });
     
     playersList.innerHTML = playersHTML;
-
     document.getElementById('player-modal').classList.remove('hidden');
 }
 
+// Card click event listener to select which card was clicked
 const pitchImages = document.querySelectorAll('.card-image');
+let selectedCard = null;
+
 pitchImages.forEach(img => {
     img.addEventListener('click', () => {
-        showPlayerModal();
+        selectedCard = img.closest('.card-image');
+        showPlayerModal(selectedCard.dataset.card);
     });
 });
 
+// When a player is selected from the modal, update the card
+document.getElementById('players-list').addEventListener('click', (e) => {
+    const playerData = e.target.closest('.flex').dataset;
+
+    if (selectedCard && playerData.card === selectedCard.dataset.card) {
+        const player = playersData.find(p => p.name === playerData.player);
+
+        if (selectedCard.dataset.card === 'GK') {
+            selectedCard.innerHTML = `
+                <img src="img/Cards/BASIC.png" alt="Basic Image" class="w-28 card-image">
+                <img src="${player.img}" alt="Top Image" class="absolute top-0 -left-0 mt-2 ml-3 w-20 z-10"> <!-- player image -->
+                <p class="absolute text-white -mt-[104px] ml-[26px]" class="player-rating">${player.rating}</p> <!-- rating -->
+                <p class="absolute text-white -mt-[90px] ml-[26px] z-20 player-position">${player.position}</p> <!-- position -->
+            `;
+        } else if (selectedCard.dataset.card === 'ST') {
+            selectedCard.innerHTML = `
+                <img src="img/Cards/BASIC.png" alt="Basic Image" class="w-28 card-image">
+                <img src="${player.img}" alt="Top Image" class="top-0 -left-0 -mt-24 ml-3 w-20 z-10">
+                <p class="absolute text-white -mt-[86px] ml-[26px]" class="player-rating">${player.rating}</p>
+                <p class="absolute text-white -mt-[70px] ml-[26px] z-20 player-position">${player.position}</p>
+            `;
+        } else if (selectedCard.dataset.card === 'CM1') {
+            selectedCard.innerHTML = `
+                <img src="img/Cards/BASIC.png" alt="Basic Image" class="w-28 card-image">
+                <img src="${player.img}" alt="Top Image" class="top-0 -left-0 -mt-24 ml-3 w-20 z-10">
+                <p class="absolute text-white -mt-[86px] ml-[26px]" class="player-rating">${player.rating}</p>
+                <p class="absolute text-white -mt-[70px] ml-[26px] z-20 player-position">${player.position}</p>
+            `;
+        } else if (selectedCard.dataset.card === 'CM2') {
+            selectedCard.innerHTML = `
+                <img src="img/Cards/BASIC.png" alt="Basic Image" class="w-28 card-image">
+                <img src="${player.img}" alt="Top Image" class="top-0 -left-0 -mt-24 ml-3 w-20 z-10">
+                <p class="absolute text-white -mt-[86px] ml-[26px]" class="player-rating">${player.rating}</p>
+                <p class="absolute text-white -mt-[70px] ml-[26px] z-20 player-position">${player.position}</p>
+            `;
+        } else if (selectedCard.dataset.card === 'CM3') {
+            selectedCard.innerHTML = `
+                <img src="img/Cards/BASIC.png" alt="Basic Image" class="w-28 card-image">
+                <img src="${player.img}" alt="Top Image" class="top-0 -left-0 -mt-24 ml-3 w-20 z-10">
+                <p class="absolute text-white -mt-[86px] ml-[26px]" class="player-rating">${player.rating}</p>
+                <p class="absolute text-white -mt-[70px] ml-[26px] z-20 player-position">${player.position}</p>
+            `;
+        } else if (selectedCard.dataset.card === 'CB1') {
+            selectedCard.innerHTML = `
+                <img src="img/Cards/BASIC.png" alt="Basic Image" class="w-28 card-image">
+                <img src="${player.img}" alt="Top Image" class="top-0 -left-0 -mt-24 ml-3 w-20 z-10">
+                <p class="absolute text-white -mt-[86px] ml-[26px]" class="player-rating">${player.rating}</p>
+                <p class="absolute text-white -mt-[70px] ml-[26px] z-20 player-position">${player.position}</p>
+            `;
+        } else if (selectedCard.dataset.card === 'CB2') {
+            selectedCard.innerHTML = `
+                <img src="img/Cards/BASIC.png" alt="Basic Image" class="w-28 card-image">
+                <img src="${player.img}" alt="Top Image" class="top-0 -left-0 -mt-24 ml-3 w-20 z-10">
+                <p class="absolute text-white -mt-[86px] ml-[26px]" class="player-rating">${player.rating}</p>
+                <p class="absolute text-white -mt-[70px] ml-[26px] z-20 player-position">${player.position}</p>
+            `;
+        } else if (selectedCard.dataset.card === 'RW') {
+            selectedCard.innerHTML = `
+                <img src="img/Cards/BASIC.png" alt="Basic Image" class="w-28 card-image">
+                <img src="${player.img}" alt="Top Image" class="top-0 -left-0 -mt-24 ml-3 w-20 z-10">
+                <p class="absolute text-white -mt-[86px] ml-[26px]" class="player-rating">${player.rating}</p>
+                <p class="absolute text-white -mt-[70px] ml-[26px] z-20 player-position">${player.position}</p>
+            `;
+        } else if (selectedCard.dataset.card === 'LW') {
+            selectedCard.innerHTML = `
+                <img src="img/Cards/BASIC.png" alt="Basic Image" class="w-28 card-image">
+                <img src="${player.img}" alt="Top Image" class="top-0 -left-0 -mt-24 ml-3 w-20 z-10">
+                <p class="absolute text-white -mt-[86px] ml-[26px]" class="player-rating">${player.rating}</p>
+                <p class="absolute text-white -mt-[70px] ml-[26px] z-20 player-position">${player.position}</p>
+            `;
+        } else if (selectedCard.dataset.card === 'LB') {
+            selectedCard.innerHTML = `
+                <img src="img/Cards/BASIC.png" alt="Basic Image" class="w-28 card-image">
+                <img src="${player.img}" alt="Top Image" class="top-0 -left-0 -mt-24 ml-3 w-20 z-10">
+                <p class="absolute text-white -mt-[86px] ml-[26px]" class="player-rating">${player.rating}</p>
+                <p class="absolute text-white -mt-[70px] ml-[26px] z-20 player-position">${player.position}</p>
+            `;
+        } else if (selectedCard.dataset.card === 'RB') {
+            selectedCard.innerHTML = `
+                <img src="img/Cards/BASIC.png" alt="Basic Image" class="w-28 card-image">
+                <img src="${player.img}" alt="Top Image" class="top-0 -left-0 -mt-24 ml-3 w-20 z-10">
+                <p class="absolute text-white -mt-[86px] ml-[26px]" class="player-rating">${player.rating}</p>
+                <p class="absolute text-white -mt-[70px] ml-[26px] z-20 player-position">${player.position}</p>
+            `;
+        }
+
+        document.getElementById('player-modal').classList.add('hidden');
+    }
+});
+
+// Close modal
 document.getElementById('close-modal').addEventListener('click', () => {
     document.getElementById('player-modal').classList.add('hidden');
 });
