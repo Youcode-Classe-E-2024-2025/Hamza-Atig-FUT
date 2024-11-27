@@ -153,6 +153,7 @@ const playersData = [
         defense: "85",
         dribble: "60",
         physical: "80",
+        position: "GK",
         img: "img/GK/alisson.avif"
     },
     {
@@ -165,6 +166,7 @@ const playersData = [
         defense: "80",
         dribble: "55",
         physical: "75",
+        position: "GK",
         img: "img/GK/hugo.avif"
     },
     {
@@ -177,6 +179,7 @@ const playersData = [
         defense: "80",
         dribble: "88",
         physical: "90",
+        position: "CB",
         img: "img/CB/gullit.png"
     },
     {
@@ -189,6 +192,7 @@ const playersData = [
         defense: "95",
         dribble: "70",
         physical: "85",
+        position: "CB",
         img: "img/CB/vand.png"
     },
     {
@@ -201,6 +205,7 @@ const playersData = [
         defense: "88",
         dribble: "75",
         physical: "85",
+        position: "CB",
         img: "img/CB/ramos.avif"
     },
     {
@@ -213,6 +218,7 @@ const playersData = [
         defense: "75",
         dribble: "85",
         physical: "70",
+        position: "RB",
         img: "img/RB/arnold.avif"
     },
     {
@@ -225,6 +231,7 @@ const playersData = [
         defense: "80",
         dribble: "85",
         physical: "80",
+        position: "RB",
         img: "img/RB/Walker.avif"
     },
     {
@@ -237,6 +244,7 @@ const playersData = [
         defense: "85",
         dribble: "80",
         physical: "75",
+        position: "LB",
         img: "img/LB/robertson.avif"
     },
     {
@@ -249,6 +257,7 @@ const playersData = [
         defense: "60",
         dribble: "85",
         physical: "70",
+        position: "CM",
         img: "img/CM/debruyn.avif"
     },
     {
@@ -261,6 +270,7 @@ const playersData = [
         defense: "65",
         dribble: "88",
         physical: "70",
+        position: "CM",
         img: "img/CM/modric.avif"
     },
     {
@@ -273,6 +283,7 @@ const playersData = [
         defense: "85",
         dribble: "80",
         physical: "85",
+        position: "CM",
         img: "img/CM/pogba.avif"
     },
     {
@@ -285,6 +296,7 @@ const playersData = [
         defense: "60",
         dribble: "85",
         physical: "75",
+        position: "RW",
         img: "img/RW/salah.avif"
     },
     {
@@ -297,6 +309,7 @@ const playersData = [
         defense: "60",
         dribble: "88",
         physical: "70",
+        position: "RW",
         img: "img/RW/sancho.avif"
     },
     {
@@ -309,6 +322,7 @@ const playersData = [
         defense: "60",
         dribble: "80",
         physical: "85",
+        position: "ST",
         img: "img/ST/cr.avif"
     },
     {
@@ -321,6 +335,7 @@ const playersData = [
         defense: "65",
         dribble: "80",
         physical: "85",
+        position: "ST",
         img: "img/ST/lewandowski.avif"
     },
     {
@@ -333,6 +348,7 @@ const playersData = [
         defense: "60",
         dribble: "90",
         physical: "80",
+        position: "LW",
         img: "img/LW/mane.avif"
     },
     {
@@ -345,6 +361,7 @@ const playersData = [
         defense: "65",
         dribble: "90",
         physical: "70",
+        position: "LW",
         img: "img/LW/sterling.avif"
     }
 ];
@@ -357,12 +374,15 @@ function showPlayerModal() {
     
     playersData.forEach(player => {
         playersHTML += `
-            <div class="flex items-center space-x-4 cursor-pointer mb-4" onclick="updatePlayerOnPitch('${player.name}', '${player.position}')">
-                <img src="${player.img}" alt="${player.name}" class="w-12 h-12 rounded-full">
-                <div class="text-white">
-                    <p class="font-bold text-lg">${player.name}</p>
-                    <p class="text-sm text-gray-300">Rating: ${player.rating}</p>
+            <div class="flex flex-row cursor-pointer mb-4 justify-between align-middle">
+                <div class="flex items-center space-x-4">
+                    <img src="${player.img}" alt="${player.name}" class="w-12 h-12 rounded-full">
+                    <div class="text-white">
+                        <p class="font-bold text-lg">${player.name}</p>
+                        <p class="text-sm text-gray-300">Rating: ${player.rating}</p>
+                    </div>
                 </div>
+                <p class="text-base text-gray-300 mr-5">${player.position}</p>
             </div>
         `;
     });

@@ -16,45 +16,75 @@
             <!-- Layer Of Left section -->
             <div class="absolute h-screen grid grid-cols-11 grid-rows-12" id="pitch">
                 <!-- 4-3-3 -->
-                <img class="col-start-6 row-start-10 transition duration-300 ease-in-out hover:scale-105 card-image"
-                    data-card="GK" src="img/Cards/BASIC.png" alt="">
+                <div class="col-start-6 row-start-10 transition duration-300 ease-in-out hover:scale-110 card-image"
+                    data-card="GK">
+                    <img src="img/Cards/BASIC.png" alt="">
+                </div>
 
-                <img class="col-start-5 row-start-8 transition duration-300 ease-in-out hover:scale-105 card-image"
-                    data-card="CB1" src="img/Cards/BASIC.png" alt="">
-                <img class="col-start-7 row-start-8 transition duration-300 ease-in-out hover:scale-105 card-image"
-                    data-card="CB2" src="img/Cards/BASIC.png" alt="">
+                <div class="col-start-5 row-start-8 transition duration-300 ease-in-out hover:scale-110 card-image"
+                    data-card="CB1">
+                    <img src="img/Cards/BASIC.png" alt="">
+                </div>
+                <div class="col-start-7 row-start-8 transition duration-300 ease-in-out hover:scale-110 card-image"
+                    data-card="CB2">
+                    <img src="img/Cards/BASIC.png" alt="">
+                </div>
 
-                <img class="col-start-9 row-start-9 transition duration-300 ease-in-out hover:scale-105 card-image"
-                    data-card="RB" src="img/Cards/BASIC.png" alt="">
-                <img class="col-start-3 row-start-9 transition duration-300 ease-in-out hover:scale-105 card-image"
-                    data-card="LB" src="img/Cards/BASIC.png" alt="">
+                <div class="col-start-9 row-start-9 transition duration-300 ease-in-out hover:scale-110 card-image"
+                    data-card="RB">
+                    <img src="img/Cards/BASIC.png" alt="">
+                </div>
+                <div class="col-start-3 row-start-9 transition duration-300 ease-in-out hover:scale-110 card-image"
+                    data-card="LB">
+                    <img src="img/Cards/BASIC.png" alt="">
+                </div>
 
-                <img class="col-start-4 row-start-5 transition duration-300 ease-in-out hover:scale-105 card-image"
-                    data-card="CM1" src="img/Cards/BASIC.png" alt="">
-                <img class="col-start-6 row-start-5 transition duration-300 ease-in-out hover:scale-105 card-image"
-                    data-card="CM2" src="img/Cards/BASIC.png" alt="">
-                <img class="col-start-8 row-start-5 transition duration-300 ease-in-out hover:scale-105 card-image"
-                    data-card="CM3" src="img/Cards/BASIC.png" alt="">
+                <div class="col-start-4 row-start-5 transition duration-300 ease-in-out hover:scale-110 card-image"
+                    data-card="CM1">
+                    <img src="img/Cards/BASIC.png" alt="">
+                </div>
+                <div class="col-start-6 row-start-5 transition duration-300 ease-in-out hover:scale-110 card-image"
+                    data-card="CM2">
+                    <img src="img/Cards/BASIC.png" alt="">
+                </div>
+                <div class="col-start-8 row-start-5 transition duration-300 ease-in-out hover:scale-110 card-image"
+                    data-card="CM3">
+                    <img src="img/Cards/BASIC.png" alt="">
+                </div>
 
-                <img class="col-start-4 row-start-3 transition duration-300 ease-in-out hover:scale-105 card-image"
-                    data-card="RW" src="img/Cards/BASIC.png" alt="">
-                <img class="col-start-6 row-start-2 transition duration-300 ease-in-out hover:scale-105 card-image"
-                    data-card="ST" src="img/Cards/BASIC.png" alt="">
-                <img class="col-start-8 row-start-3 transition duration-300 ease-in-out hover:scale-105 card-image"
-                    data-card="LW" src="img/Cards/BASIC.png" alt="">
+                <div class="col-start-4 row-start-3 transition duration-300 ease-in-out hover:scale-110 card-image"
+                    data-card="RW">
+                    <img src="img/Cards/BASIC.png" alt="">
+                </div>
+                <div class="col-start-6 row-start-2 transition duration-300 ease-in-out hover:scale-110 card-image"
+                    data-card="ST">
+                    <img src="img/Cards/BASIC.png" alt="">
+                </div>
+                <div class="col-start-8 row-start-3 transition duration-300 ease-in-out hover:scale-110 card-image"
+                    data-card="LW">
+                    <img src="img/Cards/BASIC.png" alt="">
+                </div>
             </div>
+
+
 
             <!-- Modal -->
             <div id="player-modal"
                 class="hidden fixed inset-0 bg-gray-800 bg-opacity-70 z-50 flex items-center justify-center">
                 <div class="bg-black rounded-lg p-4 w-1/2 max-h-[80%] overflow-hidden">
-                    <div class="flex justify-between items-center">
+                    <div class="flex justify-between items-center mb-2">
                         <h2 id="player-position" class="text-white text-2xl font-bold">Players</h2>
-                        <button id="close-modal" class="text-red-600 bg-white hover:bg-red-600 hover:text-white p-2 rounded-lg">Close</button>
+                        <button id="close-modal"
+                            class="text-red-600 bg-white hover:bg-red-600 hover:text-white p-2 rounded-lg">Close</button>
                     </div>
 
                     <!-- Scrollable list of players -->
-                    <div id="players-list" class="overflow-y-auto mt-4 max-h-96 ">
+                    <div id="players-list" class="max-h-[400px] overflow-y-auto
+                    [&::-webkit-scrollbar]:w-2
+                    [&::-webkit-scrollbar-track]:bg-gray-100
+                    [&::-webkit-scrollbar-thumb]:bg-gray-300
+                    dark:[&::-webkit-scrollbar-track]:bg-neutral-700
+                    dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500">
                         <!-- Players will be inserted here dynamically -->
                     </div>
                 </div>
