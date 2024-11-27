@@ -62,7 +62,7 @@
 
                 <div class="col-start-6 row-start-2 transition duration-300 ease-in-out hover:scale-110 card-image"
                     data-card="ST">
-                    <img class="card-image" src="img/Cards/BASIC.png" alt="">
+                    <img class="card-image" src="img/Cards/CR7.gif" alt="">
 
                 </div>
 
@@ -76,7 +76,7 @@
 
             <!-- Modal -->
             <div id="player-modal"
-                class="hidden fixed inset-0 bg-gray-800 bg-opacity-70 z-50 flex items-center justify-center">
+                class="hidden  fixed inset-0 bg-gray-800 bg-opacity-70 z-50 flex items-center justify-center">
                 <div class="bg-black rounded-lg p-4 w-1/2 max-h-[80%] overflow-hidden">
                     <div class="flex justify-between items-center mb-2">
                         <h2 id="player-position" class="text-white text-2xl font-bold">Players</h2>
@@ -92,6 +92,77 @@
             </div>
 
         </div>
+
+        <!-- Modal Structure -->
+        <div id="playerModal" class="fixed inset-0 bg-gray-700 bg-opacity-50 flex items-center justify-center hidden">
+            <div class="bg-white p-6 rounded-lg w-96 max-h-[90vh] overflow-y-auto">
+                <h2 class="text-xl font-semibold mb-4">Add Player</h2>
+                <form id="playerForm">
+                    <div class="mb-4">
+                        <label for="name" class="block text-sm font-medium text-gray-700">Player Name</label>
+                        <input type="text" id="name" class="w-full p-2 border border-gray-300 rounded-md" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="physique" class="block text-sm font-medium text-gray-700">Physique</label>
+                        <input type="text" id="physique" class="w-full p-2 border border-gray-300 rounded-md" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="rating" class="block text-sm font-medium text-gray-700">Rating</label>
+                        <input type="number" id="rating" class="w-full p-2 border border-gray-300 rounded-md" min="0"
+                            max="100" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="pace" class="block text-sm font-medium text-gray-700">Pace</label>
+                        <input type="number" id="pace" class="w-full p-2 border border-gray-300 rounded-md" min="0"
+                            max="100" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="shot" class="block text-sm font-medium text-gray-700">Shot</label>
+                        <input type="number" id="shot" class="w-full p-2 border border-gray-300 rounded-md" min="0"
+                            max="100" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="pass" class="block text-sm font-medium text-gray-700">Pass</label>
+                        <input type="number" id="pass" class="w-full p-2 border border-gray-300 rounded-md" min="0"
+                            max="100" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="dribble" class="block text-sm font-medium text-gray-700">Dribble</label>
+                        <input type="number" id="dribble" class="w-full p-2 border border-gray-300 rounded-md" min="0"
+                            max="100" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="physical" class="block text-sm font-medium text-gray-700">Physical</label>
+                        <input type="number" id="physical" class="w-full p-2 border border-gray-300 rounded-md" min="0"
+                            max="100" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="position" class="block text-sm font-medium text-gray-700">Position</label>
+                        <select id="position" class="w-full p-2 border border-gray-300 rounded-md" required>
+                            <option value="GK">GK</option>
+                            <option value="RB">RB</option>
+                            <option value="LB">LB</option>
+                            <option value="CB">CB</option>
+                            <option value="CM">CM</option>
+                            <option value="LW">LW</option>
+                            <option value="RW">RW</option>
+                            <option value="ST">ST</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label for="playerImage" class="block text-sm font-medium text-gray-700">Player Image</label>
+                        <input type="file" id="playerImage" class="w-full p-2 border border-gray-300 rounded-md">
+                    </div>
+                    <div class="mb-4">
+                        <button type="submit" class="bg-blue-600 text-white p-2 rounded-lg w-full">Add Player</button>
+                    </div>
+                    <div class="flex justify-end">
+                        <button type="button" id="closeModalBtn" class="text-gray-500">Close</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
 
         <!-- Right section -->
         <div class="w-1/4 p-10 bg-gray-900 rounded-lg flex flex-col justify-between items-center">
@@ -123,6 +194,12 @@
                     <option value="image4">TOTY Card</option>
                     <option value="image5">TOTS Card</option>
                 </select>
+
+                <button class="text-blue-600 bg-white hover:bg-blue-600 hover:text-white p-2 rounded-lg"
+                    id="addPlayerBtn">
+                    Add Player
+                </button>
+
                 <script>
                     document.getElementById('cardSelect').addEventListener('change', function () {
                         const selectedCard = this.value;
