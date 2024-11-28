@@ -121,7 +121,21 @@
 
         </div>
 
-        <!-- Modal Structure -->
+        <!-- Modal Structure player details -->
+        <div id="player-details-modal"
+            class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 justify-center items-center flex">
+            <div class="bg-white p-4 rounded-lg w-[80%] max-w-lg relative">
+                <!-- Close Button -->
+                <button id="close-modal"
+                    class="absolute top-2 right-2 text-red-500 hover:text-red-300 text-2xl" onclick="closeModal()">&times;</button>
+                <!-- Player Details Container -->
+                <div id="player-details"></div>
+            </div>
+        </div>
+
+
+
+        <!-- Modal Structure add player -->
         <div id="playerModal" class="fixed inset-0 bg-gray-700 bg-opacity-50 flex items-center justify-center hidden">
             <div class="bg-white p-6 rounded-lg w-96 max-h-[90vh] overflow-y-auto">
                 <h2 class="text-xl font-semibold mb-4">Add Player</h2>
@@ -193,21 +207,22 @@
 
 
         <!-- Right section -->
-        <div class="w-1/4 p-10 bg-gray-900 rounded-lg flex flex-col justify-between items-center">
+        <div class="w-1/4 p-10 bg-gray-900 rounded-lg flex flex-col justify-between items-center h-[100vh] overflow-x-auto">
             <div class="flex flex-col gap-4 items-center">
-                <section class="text-white flex flex-row">
+                <section class="text-white flex flex-row flex-wrap">
                     <p class="text-7xl text-green-400">102</p>
                     <p>over</p>
                 </section>
-                <section class="text-white flex flex-row">
+                <section class="text-white flex flex-row flex-wrap">
                     <p class="text-7xl text-yellow-300">80%</p>
                     <p>Agreement</p>
                 </section>
-                <section class="flex flex-row items-center">
-                    <div id="managerImageContainer" class="relative">
+                <section class="flex flex-row items-center max-lg:flex-wrap">
+                    <div id="managerImageContainer" class="relative mb-4">
                         <img src="img/Cards/TOTO.gif" class="image-manager" alt="" id="managerImage">
                     </div>
-                    <select class="bg-gray-700 text-white p-2 rounded-md border-none focus:outline-none w-full" id="managerSelect">
+                    <select class="bg-gray-700 text-white p-2 rounded-md border-none focus:outline-none w-full"
+                        id="managerSelect">
                         <option value="def">default</option>
                         <option value="m1">Zinedine Zidane</option>
                     </select>
@@ -216,10 +231,10 @@
                             const selectedManager = this.value;
                             const managerContainer = document.getElementById('managerImageContainer');
                             const managerImage = document.getElementById('managerImage');
-                
+
                             let newImage = document.createElement('img');
                             newImage.classList.add('absolute', 'top-0', 'left-0');
-                            
+
                             switch (selectedManager) {
                                 case 'm1':
                                     newImage.src = 'img/manager/zidane.avif';
@@ -232,7 +247,7 @@
                         });
                     </script>
                 </section>
-                
+
             </div>
             <div class="w-full flex flex-col gap-6">
                 <select id="strategy"

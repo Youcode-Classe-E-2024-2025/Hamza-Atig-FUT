@@ -210,6 +210,7 @@ fetch('playersData.json')
                     </div>
                 </div>
                 <button class="text-red-600 bg-white hover:bg-red-600 hover:text-white pl-2 pr-2 pt-1 pb-1 text-center rounded-lg mb-12" onclick="removePlayer('${player.name}')">Remove</button>
+                <button class="text-blue-600 bg-white hover:bg-blue-600 hover:text-white pl-2 pr-2 pt-1 pb-1 text-center rounded-lg mb-12" onclick="viewPlayerDetails('${player.name}')">View Details</button>
             `;
         });
         
@@ -227,6 +228,43 @@ fetch('playersData.json')
         }
         showPlayerModal(selectedCard.dataset.card);
     }
+    
+
+    function viewPlayerDetails(playerName) {
+        const player = playersData.find(player => player.name === playerName);
+        if (player) {
+            const playerDetailsModal = document.getElementById('player-details-modal');
+            const playerDetails = document.getElementById('player-details');
+    
+            // Show the modal by removing the 'hidden' class
+            playerDetailsModal.classList.remove('hidden');
+    
+            // Inject player data into modal content
+            playerDetails.innerHTML = `
+                <h2 class="text-2xl font-bold my-4">${player.name}</h2>
+                <div class="flex flex-row gap-4 items-center">
+                    <img src="${player.img}" alt="${player.name}" class="w-24 h-24 rounded-full">
+                    <div>
+                        <p class="text-sm text-gray-700">Position: ${player.position}</p>
+                        <p class="text-sm text-gray-700">Rating: ${player.rating}</p>
+                        <p class="text-sm text-gray-700">Pace: ${player.pace}</p>
+                        <p class="text-sm text-gray-700">Shot: ${player.shot}</p>
+                        <p class="text-sm text-gray-700">Pass: ${player.pass}</p>
+                        <p class="text-sm text-gray-700">Defense: ${player.defense}</p>
+                        <p class="text-sm text-gray-700">Dribble: ${player.dribble}</p>
+                        <p class="text-sm text-gray-700">Physical: ${player.physical}</p>
+                    </div>
+                </div>
+            `;
+    
+        }
+    }
+    
+    function closeModal() {
+        document.getElementById('player-details-modal').classList.add('hidden');
+    }
+    
+    document.getElementById('closeModalBtn').addEventListener('click', closeModal);
 
 
 const pitchImages = document.querySelectorAll('.card-image');
