@@ -1,3 +1,36 @@
+document.addEventListener('DOMContentLoaded', () => {
+
+    const offerModal = document.createElement("div");
+    offerModal.classList.add("fixed", "top-0", "right-0", "left-0", "bottom-0", "bg-black", "bg-opacity-50", "flex", "items-center", "justify-center", "z-10");
+    offerModal.innerHTML = `
+        <div class="flex flex-col justify-center items-center bg-black border border-purple-500 rounded-xl p-4 w-[500px]">
+            <div class="flex flex-row justify-evenly">
+                <img class="card-image" src="img/Cards/CR7.gif" alt="CR7">
+                <p class="text-white mt-5">You've received an exclusive offer to claim limited edition 
+                    CR7 cards! Do you want to add them to your collection or refuse the 
+                    offer? The choice is yours! (NOTE: do not change card if accept that offer)
+                </p>
+            </div>
+            <div class="flex flex-row gap-4">
+                <button class="bg-blue-600 text-white p-2 rounded-lg" id="accept">Accept</button>
+                <button class="bg-red-600 text-white p-2 rounded-lg" id="refuse">Refuse</button>
+            </div>
+        </div>
+    `;
+
+    document.body.appendChild(offerModal);
+
+    document.getElementById("accept").addEventListener("click", () => {
+        offerModal.remove();
+        const stCardImage = document.querySelector('[data-card="ST"] img');
+        if (stCardImage) {
+            stCardImage.src = "img/Cards/CR7.gif";
+        }
+    });
+    document.getElementById("refuse").addEventListener("click", () => {
+        offerModal.remove();
+    });
+});
 
 document.getElementById("strategy").addEventListener("change", function(event) {
     const formation = event.target.value;
