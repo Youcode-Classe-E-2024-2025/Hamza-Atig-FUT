@@ -236,78 +236,78 @@ document.getElementById('players-list').addEventListener('click', (e) => {
             selectedCard.innerHTML = `
                 <img src="img/Cards/BASIC.png" alt="Basic Image" class="w-28 card-image">
                 <img src="${player.img}" alt="Top Image" class="absolute top-0 -left-0 mt-2 ml-3 w-20 z-10"> <!-- player image -->
-                <p class="absolute text-white -mt-[104px] ml-[26px]" class="player-rating">${player.rating}</p> <!-- rating -->
-                <p class="absolute text-white -mt-[90px] ml-[26px] z-20 player-position">${player.position}</p> <!-- position -->
+                <p class="absolute text-white text-[14px] -mt-[104px] ml-[26px]" class="player-rating">${player.rating}</p> <!-- rating -->
+                <p class="absolute text-white text-[10px] -mt-[90px] ml-[26px] z-20 player-position">${player.position}</p> <!-- position -->
             `;
         } else if (selectedCard.dataset.card === 'ST') {
             selectedCard.innerHTML = `
                 <img src="img/Cards/BASIC.png" alt="Basic Image" class="w-28 card-image">
                 <img src="${player.img}" alt="Top Image" class="top-0 -left-0 -mt-24 ml-3 w-20 z-10">
-                <p class="absolute text-white -mt-[86px] ml-[26px]" class="player-rating">${player.rating}</p>
-                <p class="absolute text-white -mt-[70px] ml-[26px] z-20 player-position">${player.position}</p>
+                <p class="absolute text-white text-[14px] -mt-[86px] ml-[26px]" class="player-rating">${player.rating}</p>
+                <p class="absolute text-white text-[10px] -mt-[70px] ml-[26px] z-20 player-position">${player.position}</p>
             `;
         } else if (selectedCard.dataset.card === 'CM1') {
             selectedCard.innerHTML = `
                 <img src="img/Cards/BASIC.png" alt="Basic Image" class="w-28 card-image">
                 <img src="${player.img}" alt="Top Image" class="top-0 -left-0 -mt-24 ml-3 w-20 z-10">
-                <p class="absolute text-white -mt-[86px] ml-[26px]" class="player-rating">${player.rating}</p>
-                <p class="absolute text-white -mt-[70px] ml-[26px] z-20 player-position">${player.position}</p>
+                <p class="absolute text-white text-[14px] -mt-[86px] ml-[26px]" class="player-rating">${player.rating}</p>
+                <p class="absolute text-white text-[10px] -mt-[70px] ml-[26px] z-20 player-position">${player.position}</p>
             `;
         } else if (selectedCard.dataset.card === 'CM2') {
             selectedCard.innerHTML = `
                 <img src="img/Cards/BASIC.png" alt="Basic Image" class="w-28 card-image">
                 <img src="${player.img}" alt="Top Image" class="top-0 -left-0 -mt-24 ml-3 w-20 z-10">
-                <p class="absolute text-white -mt-[86px] ml-[26px]" class="player-rating">${player.rating}</p>
-                <p class="absolute text-white -mt-[70px] ml-[26px] z-20 player-position">${player.position}</p>
+                <p class="absolute text-white text-[14px] -mt-[86px] ml-[26px]" class="player-rating">${player.rating}</p>
+                <p class="absolute text-white text-[10px] -mt-[70px] ml-[26px] z-20 player-position">${player.position}</p>
             `;
         } else if (selectedCard.dataset.card === 'CM3') {
             selectedCard.innerHTML = `
                 <img src="img/Cards/BASIC.png" alt="Basic Image" class="w-28 card-image">
                 <img src="${player.img}" alt="Top Image" class="top-0 -left-0 -mt-24 ml-3 w-20 z-10">
-                <p class="absolute text-white -mt-[86px] ml-[26px]" class="player-rating">${player.rating}</p>
-                <p class="absolute text-white -mt-[70px] ml-[26px] z-20 player-position">${player.position}</p>
+                <p class="absolute text-white text-[14px] -mt-[86px] ml-[26px]" class="player-rating">${player.rating}</p>
+                <p class="absolute text-white text-[10px] -mt-[70px] ml-[26px] z-20 player-position">${player.position}</p>
             `;
         } else if (selectedCard.dataset.card === 'CB1') {
             selectedCard.innerHTML = `
                 <img src="img/Cards/BASIC.png" alt="Basic Image" class="w-28 card-image">
                 <img src="${player.img}" alt="Top Image" class="top-0 -left-0 -mt-24 ml-3 w-20 z-10">
-                <p class="absolute text-white -mt-[86px] ml-[26px]" class="player-rating">${player.rating}</p>
-                <p class="absolute text-white -mt-[70px] ml-[26px] z-20 player-position">${player.position}</p>
+                <p class="absolute text-white text-[14px] -mt-[86px] ml-[26px]" class="player-rating">${player.rating}</p>
+                <p class="absolute text-white text-[10px] -mt-[70px] ml-[26px] z-20 player-position">${player.position}</p>
             `;
         } else if (selectedCard.dataset.card === 'CB2') {
             selectedCard.innerHTML = `
                 <img src="img/Cards/BASIC.png" alt="Basic Image" class="w-28 card-image">
                 <img src="${player.img}" alt="Top Image" class="top-0 -left-0 -mt-24 ml-3 w-20 z-10">
-                <p class="absolute text-white -mt-[86px] ml-[26px]" class="player-rating">${player.rating}</p>
-                <p class="absolute text-white -mt-[70px] ml-[26px] z-20 player-position">${player.position}</p>
+                <p class="absolute text-white text-[14px] -mt-[86px] ml-[26px]" class="player-rating">${player.rating}</p>
+                <p class="absolute text-white text-[10px] -mt-[70px] ml-[26px] z-20 player-position">${player.position}</p>
             `;
         } else if (selectedCard.dataset.card === 'RW') {
             selectedCard.innerHTML = `
                 <img src="img/Cards/BASIC.png" alt="Basic Image" class="w-28 card-image">
                 <img src="${player.img}" alt="Top Image" class="top-0 -left-0 -mt-24 ml-3 w-20 z-10">
-                <p class="absolute text-white -mt-[86px] ml-[26px]" class="player-rating">${player.rating}</p>
-                <p class="absolute text-white -mt-[70px] ml-[26px] z-20 player-position">${player.position}</p>
+                <p class="absolute text-white text-[14px] -mt-[86px] ml-[26px]" class="player-rating">${player.rating}</p>
+                <p class="absolute text-white text-[10px] -mt-[70px] ml-[26px] z-20 player-position">${player.position}</p>
             `;
         } else if (selectedCard.dataset.card === 'LW') {
             selectedCard.innerHTML = `
                 <img src="img/Cards/BASIC.png" alt="Basic Image" class="w-28 card-image">
                 <img src="${player.img}" alt="Top Image" class="top-0 -left-0 -mt-24 ml-3 w-20 z-10">
-                <p class="absolute text-white -mt-[86px] ml-[26px]" class="player-rating">${player.rating}</p>
-                <p class="absolute text-white -mt-[70px] ml-[26px] z-20 player-position">${player.position}</p>
+                <p class="absolute text-white -mt-[86px] text-[14px] ml-[26px]" class="player-rating">${player.rating}</p>
+                <p class="absolute text-white -mt-[70px] text-[10px] ml-[26px] z-20 player-position">${player.position}</p>
             `;
         } else if (selectedCard.dataset.card === 'LB') {
             selectedCard.innerHTML = `
                 <img src="img/Cards/BASIC.png" alt="Basic Image" class="w-28 card-image">
                 <img src="${player.img}" alt="Top Image" class="top-0 -left-0 -mt-24 ml-3 w-20 z-10">
-                <p class="absolute text-white -mt-[86px] ml-[26px]" class="player-rating">${player.rating}</p>
-                <p class="absolute text-white -mt-[70px] ml-[26px] z-20 player-position">${player.position}</p>
+                <p class="absolute text-white text-[14px] -mt-[86px] ml-[26px]" class="player-rating">${player.rating}</p>
+                <p class="absolute text-white text-[10px] -mt-[70px] ml-[26px] z-20 player-position">${player.position}</p>
             `;
         } else if (selectedCard.dataset.card === 'RB') {
             selectedCard.innerHTML = `
                 <img src="img/Cards/BASIC.png" alt="Basic Image" class="w-28 card-image">
                 <img src="${player.img}" alt="Top Image" class="top-0 -left-0 -mt-24 ml-3 w-20 z-10">
-                <p class="absolute text-white -mt-[86px] ml-[26px]" class="player-rating">${player.rating}</p>
-                <p class="absolute text-white -mt-[70px] ml-[26px] z-20 player-position">${player.position}</p>
+                <p class="absolute text-white text-[14px] -mt-[86px] ml-[26px]" class="player-rating">${player.rating}</p>
+                <p class="absolute text-white text-[10px] -mt-[70px] ml-[26px] z-20 player-position">${player.position}</p>
             `;
         }
 

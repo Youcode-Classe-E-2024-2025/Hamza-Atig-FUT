@@ -6,19 +6,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FUT</title>
     <link href="src/output.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+        rel="stylesheet">
 </head>
 
-<body>
-    <div class="bg-[url('/img/bg.jpeg')] bg-cover bg-center flex w-screen h-screen">
+<body class="font-nunito h-screen w-screen overflow-auto">
+
+    <div id="landscape-message"
+        class="hidden fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black bg-opacity-90 text-white p-6 rounded-xl text-center text-lg z-50">
+        Please rotate your device to landscape mode for the best experience.
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const landscapeMessage = document.getElementById('landscape-message');
+
+                function checkOrientation() {
+                    if (window.innerHeight > window.innerWidth) {
+                        landscapeMessage.classList.remove('hidden');
+                    } else {
+                        landscapeMessage.classList.add('hidden');
+                    }
+                }
+                window.addEventListener('resize', checkOrientation);
+
+                checkOrientation();
+            });
+
+        </script>
+    </div>
+
+
+    <div class="bg-[url('/img/bg.jpeg')] bg-cover bg-center flex w-screen h-screen overflow-x-auto">
         <!-- Left section -->
         <div class="bg-black bg-opacity-75 w-3/4 p-10 flex justify-center items-center ">
             <img class="w-[800px] h-auto rounded-lg shadow-lg" src="img/foot.webp" alt="Football Strategy Image">
             <!-- Layer Of Left section -->
             <div class="absolute h-screen grid grid-cols-11 grid-rows-12" id="pitch">
                 <!-- 4-3-3 -->
-                <div class="absolute col-start-6 row-start-10 transition duration-300 ease-in-out hover:scale-125 card-image"
+                <div class="absolute col-start-6 row-start-10 transition duration-300 ease-in-out hover:scale-125 card-image w-28"
                     data-card="GK">
-                    <img src="img/Cards/BASIC.png" alt="Basic Image" class="w-28 card-image">
+                    <img src="img/Cards/BASIC.png" alt="Basic Image" class="card-image">
                 </div>
 
                 <div class="col-start-5 row-start-8 transition duration-300 ease-in-out hover:scale-125 card-image"
