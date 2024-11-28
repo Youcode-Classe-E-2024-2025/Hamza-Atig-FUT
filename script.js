@@ -1,7 +1,3 @@
-document.addEventListener('DOMContentLoaded', () => {
-    
-})
-
 
 document.getElementById("strategy").addEventListener("change", function(event) {
     const formation = event.target.value;
