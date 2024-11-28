@@ -203,6 +203,36 @@
                     <p class="text-7xl text-yellow-300">80%</p>
                     <p>Agreement</p>
                 </section>
+                <section class="flex flex-row items-center">
+                    <div id="managerImageContainer" class="relative">
+                        <img src="img/Cards/TOTO.gif" class="image-manager" alt="" id="managerImage">
+                    </div>
+                    <select class="bg-gray-700 text-white p-2 rounded-md border-none focus:outline-none w-full" id="managerSelect">
+                        <option value="def">default</option>
+                        <option value="m1">Zinedine Zidane</option>
+                    </select>
+                    <script>
+                        document.getElementById('managerSelect').addEventListener('change', function () {
+                            const selectedManager = this.value;
+                            const managerContainer = document.getElementById('managerImageContainer');
+                            const managerImage = document.getElementById('managerImage');
+                
+                            let newImage = document.createElement('img');
+                            newImage.classList.add('absolute', 'top-0', 'left-0');
+                            
+                            switch (selectedManager) {
+                                case 'm1':
+                                    newImage.src = 'img/manager/zidane.avif';
+                                    break;
+                                default:
+                                    newImage.src = 'img/Cards/TOTO.gif';
+                                    break;
+                            }
+                            managerContainer.appendChild(newImage);
+                        });
+                    </script>
+                </section>
+                
             </div>
             <div class="w-full flex flex-col gap-6">
                 <select id="strategy"
