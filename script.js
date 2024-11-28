@@ -199,14 +199,17 @@ fetch('playersData.json')
             playersHTML += `
                 <div class="flex flex-row cursor-pointer mb-4 justify-between align-middle" data-player="${player.name}" data-position="${player.position}" data-card="${card}">
                     <div class="flex items-center space-x-4" onclick="viewPlayerDetails('${player.name}')">
-                        <img src="${player.img}" alt="${player.name}" class="w-12 h-12 rounded-full">
+                        <div class="flex flex-row gap-3">
+                            <img src="${player.img}" alt="${player.name}" class="w-12 h-12 rounded-full">
+                            <p class="text-sm text-gray-300">${player.position}</p>
+                        </div>
                         <div class="text-white">
                             <p class="font-bold text-lg">${player.name}</p>
                             <p class="text-sm text-gray-300">Rating: ${player.rating}</p>
                         </div>
                     </div>
-                    <p class="text-base text-gray-300 mr-5">${player.position}</p>
                 </div>
+                <button class="text-red-600 bg-white hover:bg-red-600 hover:text-white pl-2 pr-2 pt-1 pb-1 text-center rounded-lg mb-12" onclick="removePlayer('${player.name}')">Remove</button>
             `;
         });
         
@@ -214,6 +217,16 @@ fetch('playersData.json')
         document.getElementById('player-modal').classList.remove('hidden');
     }
     
+    function removePlayer(playerName) {
+        const playerToRemove = playersData.find(player => player.name === playerName);
+        if (playerToRemove) {
+            const index = playersData.indexOf(playerToRemove);
+            if (index > -1) {
+                playersData.splice(index, 1);
+            }
+        }
+        showPlayerModal(selectedCard.dataset.card);
+    }
 
 
 const pitchImages = document.querySelectorAll('.card-image');
