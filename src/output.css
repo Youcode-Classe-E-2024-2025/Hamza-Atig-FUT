@@ -770,6 +770,10 @@ video {
   max-height: 90vh;
 }
 
+.max-h-full {
+  max-height: 100%;
+}
+
 .w-1\/2 {
   width: 50%;
 }
@@ -812,6 +816,10 @@ video {
 
 .w-screen {
   width: 100vw;
+}
+
+.max-w-full {
+  max-width: 100%;
 }
 
 .-translate-x-1\/2 {
