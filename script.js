@@ -11,7 +11,21 @@ let LBRating = 0;
 let RBRating = 0;
 let CB1Rating = 0;
 let CB2Rating = 0;
+
 let check = 0;
+
+let agreegk = 0;
+let agreest = 0;
+let agreecm1 = 0;
+let agreecm2 = 0;
+let agreecm3 = 0;
+let agreelw = 0;
+let agreerw = 0;
+let agreelb = 0;
+let agreerb = 0;
+let agreecb1 = 0;
+let agreecb2 = 0;
+
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -42,6 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
             stCardImage.src = "img/Cards/CR7.gif";
             check=1;
             overAllRating();
+            agreement();
         }
     });
     document.getElementById("refuse").addEventListener("click", () => {
@@ -311,9 +326,15 @@ document.getElementById('players-list').addEventListener('click', (e) => {
                 <p class="absolute text-white text-[14px] -mt-[86px] ml-[26px]" class="player-rating">${player.rating}</p>
                 <p class="absolute text-white text-[10px] -mt-[70px] ml-[26px] z-20 player-position">${player.position}</p>
             `;
+            if (player.position === 'GK') {
+                agreegk=player.rating/11;
+            }else{
+                agreegk=-player.rating/18;
+            }
             removePlayer(player.name);
             goalKeeperRating = player.rating;
             overAllRating();
+            agreement();
         } else if (selectedCard.dataset.card === 'ST') {
             selectedCard.innerHTML = `
                 <img src="img/Cards/BASIC.png" alt="Basic Image" class="w-28 card-image">
@@ -321,10 +342,16 @@ document.getElementById('players-list').addEventListener('click', (e) => {
                 <p class="absolute text-white text-[14px] -mt-[86px] ml-[26px]" class="player-rating">${player.rating}</p>
                 <p class="absolute text-white text-[10px] -mt-[70px] ml-[26px] z-20 player-position">${player.position}</p>
             `;
+            if (player.position === 'ST') {
+                agreest=player.rating/11;
+            }else{
+                agreest=-player.rating/18;
+            }
             removePlayer(player.name);
             over = 0;
             stRating = player.rating;
             overAllRating();
+            agreement();
         } else if (selectedCard.dataset.card === 'CM1') {
             selectedCard.innerHTML = `
                 <img src="img/Cards/BASIC.png" alt="Basic Image" class="w-28 card-image">
@@ -332,9 +359,15 @@ document.getElementById('players-list').addEventListener('click', (e) => {
                 <p class="absolute text-white text-[14px] -mt-[86px] ml-[26px]" class="player-rating">${player.rating}</p>
                 <p class="absolute text-white text-[10px] -mt-[70px] ml-[26px] z-20 player-position">${player.position}</p>
             `;
+            if (player.position === 'CM') {
+                agreecm1=player.rating/11;
+            }else{
+                agreecm1=-player.rating/18;
+            }
             removePlayer(player.name);
             CM1Rating = player.rating;
             overAllRating();
+            agreement();
         } else if (selectedCard.dataset.card === 'CM2') {
             selectedCard.innerHTML = `
                 <img src="img/Cards/BASIC.png" alt="Basic Image" class="w-28 card-image">
@@ -342,9 +375,15 @@ document.getElementById('players-list').addEventListener('click', (e) => {
                 <p class="absolute text-white text-[14px] -mt-[86px] ml-[26px]" class="player-rating">${player.rating}</p>
                 <p class="absolute text-white text-[10px] -mt-[70px] ml-[26px] z-20 player-position">${player.position}</p>
             `;
+            if (player.position === 'CM') {
+                agreecm2=player.rating/11;
+            }else{
+                agreecm2=-player.rating/18;
+            }
             removePlayer(player.name);
             CM2Rating = player.rating;
             overAllRating();
+            agreement();
         } else if (selectedCard.dataset.card === 'CM3') {
             selectedCard.innerHTML = `
                 <img src="img/Cards/BASIC.png" alt="Basic Image" class="w-28 card-image">
@@ -352,9 +391,15 @@ document.getElementById('players-list').addEventListener('click', (e) => {
                 <p class="absolute text-white text-[14px] -mt-[86px] ml-[26px]" class="player-rating">${player.rating}</p>
                 <p class="absolute text-white text-[10px] -mt-[70px] ml-[26px] z-20 player-position">${player.position}</p>
             `;
+            if (player.position === 'CM') {
+                agreecm3=player.rating/11;
+            }else{
+                agreecm3=-player.rating/18;
+            }
             removePlayer(player.name);
             CM3Rating = player.rating;
             overAllRating();
+            agreement();
         } else if (selectedCard.dataset.card === 'CB1') {
             selectedCard.innerHTML = `
                 <img src="img/Cards/BASIC.png" alt="Basic Image" class="w-28 card-image">
@@ -362,9 +407,15 @@ document.getElementById('players-list').addEventListener('click', (e) => {
                 <p class="absolute text-white text-[14px] -mt-[86px] ml-[26px]" class="player-rating">${player.rating}</p>
                 <p class="absolute text-white text-[10px] -mt-[70px] ml-[26px] z-20 player-position">${player.position}</p>
             `;
+            if (player.position === 'CB') {
+                agreecb1=player.rating/11;
+            }else{
+                agreecb1=-player.rating/18;
+            }
             removePlayer(player.name);
             CB1Rating = player.rating;
             overAllRating();
+            agreement();
         } else if (selectedCard.dataset.card === 'CB2') {
             selectedCard.innerHTML = `
                 <img src="img/Cards/BASIC.png" alt="Basic Image" class="w-28 card-image">
@@ -372,9 +423,15 @@ document.getElementById('players-list').addEventListener('click', (e) => {
                 <p class="absolute text-white text-[14px] -mt-[86px] ml-[26px]" class="player-rating">${player.rating}</p>
                 <p class="absolute text-white text-[10px] -mt-[70px] ml-[26px] z-20 player-position">${player.position}</p>
             `;
+            if (player.position === 'CB') {
+                agreecb2=player.rating/11;
+            }else{
+                agreecb2=-player.rating/18;
+            }
             removePlayer(player.name);
             CB2Rating = player.rating;
             overAllRating();
+            agreement();
         } else if (selectedCard.dataset.card === 'RW') {
             selectedCard.innerHTML = `
                 <img src="img/Cards/BASIC.png" alt="Basic Image" class="w-28 card-image">
@@ -382,9 +439,15 @@ document.getElementById('players-list').addEventListener('click', (e) => {
                 <p class="absolute text-white text-[14px] -mt-[86px] ml-[26px]" class="player-rating">${player.rating}</p>
                 <p class="absolute text-white text-[10px] -mt-[70px] ml-[26px] z-20 player-position">${player.position}</p>
             `;
+            if (player.position === 'RW') {
+                agreerw=player.rating/11;
+            }else{
+                agreerw=-player.rating/18;
+            }
             removePlayer(player.name);
             RWRating = player.rating;
             overAllRating();
+            agreement();
         } else if (selectedCard.dataset.card === 'LW') {
             selectedCard.innerHTML = `
                 <img src="img/Cards/BASIC.png" alt="Basic Image" class="w-28 card-image">
@@ -392,9 +455,15 @@ document.getElementById('players-list').addEventListener('click', (e) => {
                 <p class="absolute text-white -mt-[86px] text-[14px] ml-[26px]" class="player-rating">${player.rating}</p>
                 <p class="absolute text-white -mt-[70px] text-[10px] ml-[26px] z-20 player-position">${player.position}</p>
             `;
+            if (player.position === 'LW') {
+                agreelw=player.rating/11;
+            }else{
+                agreelw=-player.rating/18;
+            }
             removePlayer(player.name);
             LWRating = player.rating;
             overAllRating();
+            agreement();
         } else if (selectedCard.dataset.card === 'LB') {
             selectedCard.innerHTML = `
                 <img src="img/Cards/BASIC.png" alt="Basic Image" class="w-28 card-image">
@@ -402,9 +471,15 @@ document.getElementById('players-list').addEventListener('click', (e) => {
                 <p class="absolute text-white text-[14px] -mt-[86px] ml-[26px]" class="player-rating">${player.rating}</p>
                 <p class="absolute text-white text-[10px] -mt-[70px] ml-[26px] z-20 player-position">${player.position}</p>
             `;
+            if (player.position === 'LB') {
+                agreelb=player.rating/11;
+            }else{
+                agreelb=-player.rating/18;
+            }
             removePlayer(player.name);
             LBRating = player.rating;
             overAllRating();
+            agreement();
         } else if (selectedCard.dataset.card === 'RB') {
             selectedCard.innerHTML = `
                 <img src="img/Cards/BASIC.png" alt="Basic Image" class="w-28 card-image">
@@ -412,9 +487,15 @@ document.getElementById('players-list').addEventListener('click', (e) => {
                 <p class="absolute text-white text-[14px] -mt-[86px] ml-[26px]" class="player-rating">${player.rating}</p>
                 <p class="absolute text-white text-[10px] -mt-[70px] ml-[26px] z-20 player-position">${player.position}</p>
             `;
+            if (player.position === 'RB') {
+                agreerb=player.rating/11;
+            }else{
+                agreerb=-player.rating/18;
+            }
             removePlayer(player.name);
             RBRating = player.rating;
             overAllRating();
+            agreement();
         }
         document.getElementById('player-modal').classList.add('hidden');
     }
@@ -517,8 +598,25 @@ function overAllRating() {
 }
 
 function agreement() {
-    document.getElementById("playerOver").innerHTML = `
-        <p id="playerAgree" class="text-7xl text-white">0%</p>
+    if (check == 0) {
+        agree = (Number(agreegk) + Number(agreest) + Number(agreecm1) + Number(agreecm2) + Number(agreecm3) + Number(agreecb1) + Number(agreecb2) + Number(agreerw) + Number(agreelw) + Number(agreelb) + Number(agreerb));
+    } else if (check == 1) {
+        agree = 12+(Number(agreegk) + Number(agreest) + Number(agreecm1) + Number(agreecm2) + Number(agreecm3) + Number(agreecb1) + Number(agreecb2) + Number(agreerw) + Number(agreelw) + Number(agreelb) + Number(agreerb));
+    }
+    if (agree < 0 ) {
+        document.getElementById("playerAgree").innerHTML = `
+        <p id="playerAgree" class="text-7xl text-red-600">${agree.toFixed(0)}%</p>
         <p>Agreement</p>
     `;
+    } else if (agree > 0 && agree < 100) {
+        document.getElementById("playerAgree").innerHTML = `
+        <p id="playerAgree" class="text-7xl text-white">${agree.toFixed(0)}%</p>
+        <p>Agreement</p>
+    `;
+    }else if (agree > 100) {
+        document.getElementById("playerAgree").innerHTML = `
+        <p id="playerAgree" class="text-7xl text-white">100%</p>
+        <p>Agreement</p>
+    `;
+    }
 }
