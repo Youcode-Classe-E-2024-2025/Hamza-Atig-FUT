@@ -1072,6 +1072,10 @@ video {
   background-image: url('./img/Cards/SHOW.gif');
 }
 
+.bg-\[url\(\'\.\/img\/bg\.jpeg\'\)\] {
+  background-image: url('./img/bg.jpeg');
+}
+
 .bg-cover {
   background-size: cover;
 }
