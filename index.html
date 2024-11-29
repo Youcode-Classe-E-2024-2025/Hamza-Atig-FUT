@@ -214,8 +214,8 @@
                     <p class="text-7xl text-red-400">0</p>
                     <p>over</p>
                 </section>
-                <section class="text-white flex flex-row flex-wrap">
-                    <p id="playerAgree" class="text-7xl text-yellow-300">80%</p>
+                <section  id="playerAgree" class="text-white flex flex-row flex-wrap">
+                    <p class="text-7xl text-white">0%</p>
                     <p>Agreement</p>
                 </section>
                 <section class="flex flex-row items-center max-lg:flex-wrap">
@@ -287,24 +287,37 @@
                             switch (selectedCard) {
                                 case 'image4':
                                     img.src = 'img/Cards/TOTY.png';
+                                    check=0;
+                                    overAllRating();
                                     break;
                                 case 'image5':
                                     img.src = 'img/Cards/TOTS.gif';
+                                    check=0;
+                                    overAllRating();
                                     break;
                                 case 'image6':
                                     img.src = 'img/Cards/GoldBall.gif';
+                                    check=0;
+                                    overAllRating();
                                     break;
                                 case 'image7':
                                     img.src = 'img/Cards/LEAGE.gif';
+                                    check=0;
+                                    overAllRating();
                                     break;
                                 case 'image8':
                                     img.src = 'img/Cards/Rivals.gif';
+                                    check=0;
+                                    overAllRating();
                                     break;
                                 case 'image9':
                                     img.src = 'img/Cards/Icon.gif';
+                                    check=0;
+                                    overAllRating();
                                     break;
                                 default:
                                     img.src = 'img/Cards/Basic.png';
+                                    overAllRating();
                                     break;
                             }
                         });

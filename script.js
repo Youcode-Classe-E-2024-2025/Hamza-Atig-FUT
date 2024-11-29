@@ -1,5 +1,17 @@
 let over = 0;
 let agree = 0;
+let goalKeeperRating = 0;
+let stRating = 0;
+let CM1Rating = 0;
+let CM2Rating = 0;
+let CM3Rating = 0;
+let LWRating = 0;
+let RWRating = 0;
+let LBRating = 0;
+let RBRating = 0;
+let CB1Rating = 0;
+let CB2Rating = 0;
+let check = 0;
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -28,6 +40,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const stCardImage = document.querySelector('[data-card="ST"] img');
         if (stCardImage) {
             stCardImage.src = "img/Cards/CR7.gif";
+            check=1;
+            overAllRating();
         }
     });
     document.getElementById("refuse").addEventListener("click", () => {
@@ -298,7 +312,7 @@ document.getElementById('players-list').addEventListener('click', (e) => {
                 <p class="absolute text-white text-[10px] -mt-[70px] ml-[26px] z-20 player-position">${player.position}</p>
             `;
             removePlayer(player.name);
-            over+=player.rating/10;
+            goalKeeperRating = player.rating;
             overAllRating();
         } else if (selectedCard.dataset.card === 'ST') {
             selectedCard.innerHTML = `
@@ -308,7 +322,8 @@ document.getElementById('players-list').addEventListener('click', (e) => {
                 <p class="absolute text-white text-[10px] -mt-[70px] ml-[26px] z-20 player-position">${player.position}</p>
             `;
             removePlayer(player.name);
-            over+=player.rating/10;
+            over = 0;
+            stRating = player.rating;
             overAllRating();
         } else if (selectedCard.dataset.card === 'CM1') {
             selectedCard.innerHTML = `
@@ -318,7 +333,7 @@ document.getElementById('players-list').addEventListener('click', (e) => {
                 <p class="absolute text-white text-[10px] -mt-[70px] ml-[26px] z-20 player-position">${player.position}</p>
             `;
             removePlayer(player.name);
-            over+=player.rating/10;
+            CM1Rating = player.rating;
             overAllRating();
         } else if (selectedCard.dataset.card === 'CM2') {
             selectedCard.innerHTML = `
@@ -328,7 +343,7 @@ document.getElementById('players-list').addEventListener('click', (e) => {
                 <p class="absolute text-white text-[10px] -mt-[70px] ml-[26px] z-20 player-position">${player.position}</p>
             `;
             removePlayer(player.name);
-            over+=player.rating/10;
+            CM2Rating = player.rating;
             overAllRating();
         } else if (selectedCard.dataset.card === 'CM3') {
             selectedCard.innerHTML = `
@@ -338,7 +353,7 @@ document.getElementById('players-list').addEventListener('click', (e) => {
                 <p class="absolute text-white text-[10px] -mt-[70px] ml-[26px] z-20 player-position">${player.position}</p>
             `;
             removePlayer(player.name);
-            over+=player.rating/10;
+            CM3Rating = player.rating;
             overAllRating();
         } else if (selectedCard.dataset.card === 'CB1') {
             selectedCard.innerHTML = `
@@ -348,7 +363,7 @@ document.getElementById('players-list').addEventListener('click', (e) => {
                 <p class="absolute text-white text-[10px] -mt-[70px] ml-[26px] z-20 player-position">${player.position}</p>
             `;
             removePlayer(player.name);
-            over+=player.rating/10;
+            CB1Rating = player.rating;
             overAllRating();
         } else if (selectedCard.dataset.card === 'CB2') {
             selectedCard.innerHTML = `
@@ -358,7 +373,7 @@ document.getElementById('players-list').addEventListener('click', (e) => {
                 <p class="absolute text-white text-[10px] -mt-[70px] ml-[26px] z-20 player-position">${player.position}</p>
             `;
             removePlayer(player.name);
-            over+=player.rating/10;
+            CB2Rating = player.rating;
             overAllRating();
         } else if (selectedCard.dataset.card === 'RW') {
             selectedCard.innerHTML = `
@@ -368,7 +383,7 @@ document.getElementById('players-list').addEventListener('click', (e) => {
                 <p class="absolute text-white text-[10px] -mt-[70px] ml-[26px] z-20 player-position">${player.position}</p>
             `;
             removePlayer(player.name);
-            over+=player.rating/10;
+            RWRating = player.rating;
             overAllRating();
         } else if (selectedCard.dataset.card === 'LW') {
             selectedCard.innerHTML = `
@@ -378,7 +393,7 @@ document.getElementById('players-list').addEventListener('click', (e) => {
                 <p class="absolute text-white -mt-[70px] text-[10px] ml-[26px] z-20 player-position">${player.position}</p>
             `;
             removePlayer(player.name);
-            over+=player.rating/10;
+            LWRating = player.rating;
             overAllRating();
         } else if (selectedCard.dataset.card === 'LB') {
             selectedCard.innerHTML = `
@@ -388,7 +403,7 @@ document.getElementById('players-list').addEventListener('click', (e) => {
                 <p class="absolute text-white text-[10px] -mt-[70px] ml-[26px] z-20 player-position">${player.position}</p>
             `;
             removePlayer(player.name);
-            over+=player.rating/10;
+            LBRating = player.rating;
             overAllRating();
         } else if (selectedCard.dataset.card === 'RB') {
             selectedCard.innerHTML = `
@@ -398,10 +413,9 @@ document.getElementById('players-list').addEventListener('click', (e) => {
                 <p class="absolute text-white text-[10px] -mt-[70px] ml-[26px] z-20 player-position">${player.position}</p>
             `;
             removePlayer(player.name);
-            over+=player.rating/10;
+            RBRating = player.rating;
             overAllRating();
         }
-
         document.getElementById('player-modal').classList.add('hidden');
     }
 });
@@ -472,20 +486,39 @@ playerForm.addEventListener("submit", (e) => {
 //-------------------------------------------------------------------------------
 
 function overAllRating() {
+    
+    if(check==0){
+        over = (Number(goalKeeperRating) + Number(stRating) + Number(CM1Rating) + Number(CM2Rating) + Number(CM3Rating) + Number(CB1Rating) + Number(CB2Rating) + Number(RWRating) + Number(LWRating) + Number(LBRating) + Number(RBRating)) / 10;
+    }else if(check==1){
+        over = 13+(Number(goalKeeperRating) + Number(stRating) + Number(CM1Rating) + Number(CM2Rating) + Number(CM3Rating) + Number(CB1Rating) + Number(CB2Rating) + Number(RWRating) + Number(LWRating) + Number(LBRating) + Number(RBRating)) / 10;
+    }
+
     if (over <= 40) {
         document.getElementById("playerOver").innerHTML = `
-        <p class="text-7xl text-red-400">${over}</p>
+        <p class="text-7xl text-red-400">${over.toFixed(2)}</p>
         <p>over</p>
     `;
     }else if (over > 40 && over < 80){
         document.getElementById("playerOver").innerHTML = `
-        <p class="text-7xl text-yellow-400">${over}</p>
+        <p class="text-7xl text-yellow-400">${over.toFixed(2)}</p>
         <p>over</p>
     `;
-    }else if (over >= 80){
+    }else if (over >= 80 && over < 100){
         document.getElementById("playerOver").innerHTML = `
-        <p class="text-7xl text-green-400">${over}</p>
+        <p class="text-7xl text-green-400">${over.toFixed(2)}</p>
+        <p>over</p>
+    `;
+    }else if (over >= 100){
+        document.getElementById("playerOver").innerHTML = `
+        <p class="text-7xl text-blue-400">${over.toFixed(2)}</p>
         <p>over</p>
     `;
     }
+}
+
+function agreement() {
+    document.getElementById("playerOver").innerHTML = `
+        <p id="playerAgree" class="text-7xl text-white">0%</p>
+        <p>Agreement</p>
+    `;
 }
