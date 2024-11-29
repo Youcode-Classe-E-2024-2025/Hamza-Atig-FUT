@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <img class="card-image" src="img/Cards/CR7.gif" alt="CR7">
                 <p class="text-white mt-5">You've received an exclusive offer to claim limited edition 
                     CR7 cards! Do you want to add them to your collection or refuse the 
-                    offer? The choice is yours! (NOTE: do not change card if accept that offer)
+                    offer? The choice is yours! (NOTE: do not change card if you accept that offer!!)
                 </p>
             </div>
             <div class="flex flex-row gap-4">
@@ -241,18 +241,21 @@ fetch('playersData.json')
     
             // Inject player data into modal content
             playerDetails.innerHTML = `
-                <h2 class="text-2xl font-bold my-4">${player.name}</h2>
-                <div class="flex flex-row gap-4 items-center">
-                    <img src="${player.img}" alt="${player.name}" class="w-24 h-24 rounded-full">
+                <h2 class="text-2xl text-white font-bold mt-2 mb-2">${player.name}</h2>
+                <div class="flex flex-row gap-4 justify-evenly align-middle items-center mb-2">
+                    <div class="">
+                        <img src="img/Cards/SHOW.gif" alt="Basic Image" class="w-28 card-image">
+                        <img src="${player.img}" alt="Top Image" class="top-0 -left-0 -mt-24 ml-3 w-20 z-10">
+                    </div>
                     <div>
-                        <p class="text-sm text-gray-700">Position: ${player.position}</p>
-                        <p class="text-sm text-gray-700">Rating: ${player.rating}</p>
-                        <p class="text-sm text-gray-700">Pace: ${player.pace}</p>
-                        <p class="text-sm text-gray-700">Shot: ${player.shot}</p>
-                        <p class="text-sm text-gray-700">Pass: ${player.pass}</p>
-                        <p class="text-sm text-gray-700">Defense: ${player.defense}</p>
-                        <p class="text-sm text-gray-700">Dribble: ${player.dribble}</p>
-                        <p class="text-sm text-gray-700">Physical: ${player.physical}</p>
+                        <p class="text-sm text-white">Position: ${player.position}</p>
+                        <p class="text-sm text-white">Rating: ${player.rating}</p>
+                        <p class="text-sm text-white">Pace: ${player.pace}</p>
+                        <p class="text-sm text-white">Shot: ${player.shot}</p>
+                        <p class="text-sm text-white">Pass: ${player.pass}</p>
+                        <p class="text-sm text-white">Defense: ${player.defense}</p>
+                        <p class="text-sm text-white">Dribble: ${player.dribble}</p>
+                        <p class="text-sm text-white">Physical: ${player.physical}</p>
                     </div>
                 </div>
             `;
