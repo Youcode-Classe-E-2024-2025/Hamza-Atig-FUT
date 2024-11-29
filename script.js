@@ -293,6 +293,7 @@ document.getElementById('players-list').addEventListener('click', (e) => {
                 <p class="absolute text-white text-[14px] -mt-[86px] ml-[26px]" class="player-rating">${player.rating}</p>
                 <p class="absolute text-white text-[10px] -mt-[70px] ml-[26px] z-20 player-position">${player.position}</p>
             `;
+            removePlayer(player.name);
         } else if (selectedCard.dataset.card === 'ST') {
             selectedCard.innerHTML = `
                 <img src="img/Cards/BASIC.png" alt="Basic Image" class="w-28 card-image">
@@ -300,6 +301,7 @@ document.getElementById('players-list').addEventListener('click', (e) => {
                 <p class="absolute text-white text-[14px] -mt-[86px] ml-[26px]" class="player-rating">${player.rating}</p>
                 <p class="absolute text-white text-[10px] -mt-[70px] ml-[26px] z-20 player-position">${player.position}</p>
             `;
+            removePlayer(player.name);
         } else if (selectedCard.dataset.card === 'CM1') {
             selectedCard.innerHTML = `
                 <img src="img/Cards/BASIC.png" alt="Basic Image" class="w-28 card-image">
@@ -307,6 +309,7 @@ document.getElementById('players-list').addEventListener('click', (e) => {
                 <p class="absolute text-white text-[14px] -mt-[86px] ml-[26px]" class="player-rating">${player.rating}</p>
                 <p class="absolute text-white text-[10px] -mt-[70px] ml-[26px] z-20 player-position">${player.position}</p>
             `;
+            removePlayer(player.name);
         } else if (selectedCard.dataset.card === 'CM2') {
             selectedCard.innerHTML = `
                 <img src="img/Cards/BASIC.png" alt="Basic Image" class="w-28 card-image">
@@ -314,6 +317,7 @@ document.getElementById('players-list').addEventListener('click', (e) => {
                 <p class="absolute text-white text-[14px] -mt-[86px] ml-[26px]" class="player-rating">${player.rating}</p>
                 <p class="absolute text-white text-[10px] -mt-[70px] ml-[26px] z-20 player-position">${player.position}</p>
             `;
+            removePlayer(player.name);
         } else if (selectedCard.dataset.card === 'CM3') {
             selectedCard.innerHTML = `
                 <img src="img/Cards/BASIC.png" alt="Basic Image" class="w-28 card-image">
@@ -321,6 +325,7 @@ document.getElementById('players-list').addEventListener('click', (e) => {
                 <p class="absolute text-white text-[14px] -mt-[86px] ml-[26px]" class="player-rating">${player.rating}</p>
                 <p class="absolute text-white text-[10px] -mt-[70px] ml-[26px] z-20 player-position">${player.position}</p>
             `;
+            removePlayer(player.name);
         } else if (selectedCard.dataset.card === 'CB1') {
             selectedCard.innerHTML = `
                 <img src="img/Cards/BASIC.png" alt="Basic Image" class="w-28 card-image">
@@ -328,6 +333,7 @@ document.getElementById('players-list').addEventListener('click', (e) => {
                 <p class="absolute text-white text-[14px] -mt-[86px] ml-[26px]" class="player-rating">${player.rating}</p>
                 <p class="absolute text-white text-[10px] -mt-[70px] ml-[26px] z-20 player-position">${player.position}</p>
             `;
+            removePlayer(player.name);
         } else if (selectedCard.dataset.card === 'CB2') {
             selectedCard.innerHTML = `
                 <img src="img/Cards/BASIC.png" alt="Basic Image" class="w-28 card-image">
@@ -335,6 +341,7 @@ document.getElementById('players-list').addEventListener('click', (e) => {
                 <p class="absolute text-white text-[14px] -mt-[86px] ml-[26px]" class="player-rating">${player.rating}</p>
                 <p class="absolute text-white text-[10px] -mt-[70px] ml-[26px] z-20 player-position">${player.position}</p>
             `;
+            removePlayer(player.name);
         } else if (selectedCard.dataset.card === 'RW') {
             selectedCard.innerHTML = `
                 <img src="img/Cards/BASIC.png" alt="Basic Image" class="w-28 card-image">
@@ -342,6 +349,7 @@ document.getElementById('players-list').addEventListener('click', (e) => {
                 <p class="absolute text-white text-[14px] -mt-[86px] ml-[26px]" class="player-rating">${player.rating}</p>
                 <p class="absolute text-white text-[10px] -mt-[70px] ml-[26px] z-20 player-position">${player.position}</p>
             `;
+            removePlayer(player.name);
         } else if (selectedCard.dataset.card === 'LW') {
             selectedCard.innerHTML = `
                 <img src="img/Cards/BASIC.png" alt="Basic Image" class="w-28 card-image">
@@ -349,6 +357,7 @@ document.getElementById('players-list').addEventListener('click', (e) => {
                 <p class="absolute text-white -mt-[86px] text-[14px] ml-[26px]" class="player-rating">${player.rating}</p>
                 <p class="absolute text-white -mt-[70px] text-[10px] ml-[26px] z-20 player-position">${player.position}</p>
             `;
+            removePlayer(player.name);
         } else if (selectedCard.dataset.card === 'LB') {
             selectedCard.innerHTML = `
                 <img src="img/Cards/BASIC.png" alt="Basic Image" class="w-28 card-image">
@@ -356,6 +365,7 @@ document.getElementById('players-list').addEventListener('click', (e) => {
                 <p class="absolute text-white text-[14px] -mt-[86px] ml-[26px]" class="player-rating">${player.rating}</p>
                 <p class="absolute text-white text-[10px] -mt-[70px] ml-[26px] z-20 player-position">${player.position}</p>
             `;
+            removePlayer(player.name);
         } else if (selectedCard.dataset.card === 'RB') {
             selectedCard.innerHTML = `
                 <img src="img/Cards/BASIC.png" alt="Basic Image" class="w-28 card-image">
@@ -363,6 +373,7 @@ document.getElementById('players-list').addEventListener('click', (e) => {
                 <p class="absolute text-white text-[14px] -mt-[86px] ml-[26px]" class="player-rating">${player.rating}</p>
                 <p class="absolute text-white text-[10px] -mt-[70px] ml-[26px] z-20 player-position">${player.position}</p>
             `;
+            removePlayer(player.name);
         }
 
         document.getElementById('player-modal').classList.add('hidden');
