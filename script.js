@@ -1,3 +1,6 @@
+let over = 0;
+let agree = 0;
+
 document.addEventListener('DOMContentLoaded', () => {
 
     const offerModal = document.createElement("div");
@@ -197,7 +200,7 @@ fetch('playersData.json')
     
         playersData.forEach(player => {
             playersHTML += `
-                <div class="flex flex-row cursor-pointer mb-4 justify-between align-middle" data-player="${player.name}" data-position="${player.position}" data-card="${card}">
+                <div class="flex flex-row cursor-pointer mb-4 justify-between align-middle items-start" data-player="${player.name}" data-position="${player.position}" data-card="${card}">
                     <div class="flex items-center space-x-4" onclick="viewPlayerDetails('${player.name}')">
                         <div class="flex flex-row gap-3">
                             <img src="${player.img}" alt="${player.name}" class="w-12 h-12 rounded-full">
@@ -208,6 +211,7 @@ fetch('playersData.json')
                             <p class="text-sm text-gray-300">Rating: ${player.rating}</p>
                         </div>
                     </div>
+                    <p class="text-sm text-white pl-4 pr-4 pt-1 pb-1 justify-end rounded-lg bg-green-500 items-center text-center" >add</p>
                 </div>
                 <button class="text-red-600 bg-white hover:bg-red-600 hover:text-white pl-2 pr-2 pt-1 pb-1 text-center rounded-lg mb-12" onclick="removePlayer('${player.name}')">Remove</button>
                 <button class="text-blue-600 bg-white hover:bg-blue-600 hover:text-white pl-2 pr-2 pt-1 pb-1 text-center rounded-lg mb-12" onclick="viewPlayerDetails('${player.name}')">View Details</button>
@@ -294,6 +298,8 @@ document.getElementById('players-list').addEventListener('click', (e) => {
                 <p class="absolute text-white text-[10px] -mt-[70px] ml-[26px] z-20 player-position">${player.position}</p>
             `;
             removePlayer(player.name);
+            over+=player.rating/10;
+            overAllRating();
         } else if (selectedCard.dataset.card === 'ST') {
             selectedCard.innerHTML = `
                 <img src="img/Cards/BASIC.png" alt="Basic Image" class="w-28 card-image">
@@ -302,6 +308,8 @@ document.getElementById('players-list').addEventListener('click', (e) => {
                 <p class="absolute text-white text-[10px] -mt-[70px] ml-[26px] z-20 player-position">${player.position}</p>
             `;
             removePlayer(player.name);
+            over+=player.rating/10;
+            overAllRating();
         } else if (selectedCard.dataset.card === 'CM1') {
             selectedCard.innerHTML = `
                 <img src="img/Cards/BASIC.png" alt="Basic Image" class="w-28 card-image">
@@ -310,6 +318,8 @@ document.getElementById('players-list').addEventListener('click', (e) => {
                 <p class="absolute text-white text-[10px] -mt-[70px] ml-[26px] z-20 player-position">${player.position}</p>
             `;
             removePlayer(player.name);
+            over+=player.rating/10;
+            overAllRating();
         } else if (selectedCard.dataset.card === 'CM2') {
             selectedCard.innerHTML = `
                 <img src="img/Cards/BASIC.png" alt="Basic Image" class="w-28 card-image">
@@ -318,6 +328,8 @@ document.getElementById('players-list').addEventListener('click', (e) => {
                 <p class="absolute text-white text-[10px] -mt-[70px] ml-[26px] z-20 player-position">${player.position}</p>
             `;
             removePlayer(player.name);
+            over+=player.rating/10;
+            overAllRating();
         } else if (selectedCard.dataset.card === 'CM3') {
             selectedCard.innerHTML = `
                 <img src="img/Cards/BASIC.png" alt="Basic Image" class="w-28 card-image">
@@ -326,6 +338,8 @@ document.getElementById('players-list').addEventListener('click', (e) => {
                 <p class="absolute text-white text-[10px] -mt-[70px] ml-[26px] z-20 player-position">${player.position}</p>
             `;
             removePlayer(player.name);
+            over+=player.rating/10;
+            overAllRating();
         } else if (selectedCard.dataset.card === 'CB1') {
             selectedCard.innerHTML = `
                 <img src="img/Cards/BASIC.png" alt="Basic Image" class="w-28 card-image">
@@ -334,6 +348,8 @@ document.getElementById('players-list').addEventListener('click', (e) => {
                 <p class="absolute text-white text-[10px] -mt-[70px] ml-[26px] z-20 player-position">${player.position}</p>
             `;
             removePlayer(player.name);
+            over+=player.rating/10;
+            overAllRating();
         } else if (selectedCard.dataset.card === 'CB2') {
             selectedCard.innerHTML = `
                 <img src="img/Cards/BASIC.png" alt="Basic Image" class="w-28 card-image">
@@ -342,6 +358,8 @@ document.getElementById('players-list').addEventListener('click', (e) => {
                 <p class="absolute text-white text-[10px] -mt-[70px] ml-[26px] z-20 player-position">${player.position}</p>
             `;
             removePlayer(player.name);
+            over+=player.rating/10;
+            overAllRating();
         } else if (selectedCard.dataset.card === 'RW') {
             selectedCard.innerHTML = `
                 <img src="img/Cards/BASIC.png" alt="Basic Image" class="w-28 card-image">
@@ -350,6 +368,8 @@ document.getElementById('players-list').addEventListener('click', (e) => {
                 <p class="absolute text-white text-[10px] -mt-[70px] ml-[26px] z-20 player-position">${player.position}</p>
             `;
             removePlayer(player.name);
+            over+=player.rating/10;
+            overAllRating();
         } else if (selectedCard.dataset.card === 'LW') {
             selectedCard.innerHTML = `
                 <img src="img/Cards/BASIC.png" alt="Basic Image" class="w-28 card-image">
@@ -358,6 +378,8 @@ document.getElementById('players-list').addEventListener('click', (e) => {
                 <p class="absolute text-white -mt-[70px] text-[10px] ml-[26px] z-20 player-position">${player.position}</p>
             `;
             removePlayer(player.name);
+            over+=player.rating/10;
+            overAllRating();
         } else if (selectedCard.dataset.card === 'LB') {
             selectedCard.innerHTML = `
                 <img src="img/Cards/BASIC.png" alt="Basic Image" class="w-28 card-image">
@@ -366,6 +388,8 @@ document.getElementById('players-list').addEventListener('click', (e) => {
                 <p class="absolute text-white text-[10px] -mt-[70px] ml-[26px] z-20 player-position">${player.position}</p>
             `;
             removePlayer(player.name);
+            over+=player.rating/10;
+            overAllRating();
         } else if (selectedCard.dataset.card === 'RB') {
             selectedCard.innerHTML = `
                 <img src="img/Cards/BASIC.png" alt="Basic Image" class="w-28 card-image">
@@ -374,6 +398,8 @@ document.getElementById('players-list').addEventListener('click', (e) => {
                 <p class="absolute text-white text-[10px] -mt-[70px] ml-[26px] z-20 player-position">${player.position}</p>
             `;
             removePlayer(player.name);
+            over+=player.rating/10;
+            overAllRating();
         }
 
         document.getElementById('player-modal').classList.add('hidden');
@@ -439,3 +465,27 @@ playerForm.addEventListener("submit", (e) => {
     modal.classList.add("hidden");
     playerForm.reset();
 });
+
+
+//-------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------
+
+function overAllRating() {
+    if (over <= 40) {
+        document.getElementById("playerOver").innerHTML = `
+        <p class="text-7xl text-red-400">${over}</p>
+        <p>over</p>
+    `;
+    }else if (over > 40 && over < 80){
+        document.getElementById("playerOver").innerHTML = `
+        <p class="text-7xl text-yellow-400">${over}</p>
+        <p>over</p>
+    `;
+    }else if (over >= 80){
+        document.getElementById("playerOver").innerHTML = `
+        <p class="text-7xl text-green-400">${over}</p>
+        <p>over</p>
+    `;
+    }
+}
