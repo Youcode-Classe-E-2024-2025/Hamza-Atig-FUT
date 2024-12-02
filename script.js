@@ -497,6 +497,62 @@ document.getElementById('players-list').addEventListener('click', (e) => {
             RBRating = player.rating;
             overAllRating();
             agreement();
+        }else if (selectedCard.dataset.card === 'rp1') {
+            selectedCard.innerHTML = `
+                <img src="img/Cards/BASIC.png" alt="Basic Image" class="w-28 card-image">
+                <img src="${player.img}" alt="Top Image" class=" absolute top-0 left-0">
+                <p class="absolute top-1 left-6 text-white text-[14px] max-xl:text-[11px] max-xl:left-4 max-md:text-[7px] max-md:left-3" class="player-rating">${player.rating}</p>
+                <p class="absolute top-6 left-6 text-white text-[10px] max-xl:text-[7px] max-xl:left-4 max-xl:top-4 max-md:text-[4px] max-md:left-3 max-md:top-3 z-20 player-position">${player.position}</p>
+            `;
+        }else if (selectedCard.dataset.card === 'rp2') {
+            selectedCard.innerHTML = `
+                <img src="img/Cards/BASIC.png" alt="Basic Image" class="w-28 card-image">
+                <img src="${player.img}" alt="Top Image" class=" absolute top-0 left-0">
+                <p class="absolute top-1 left-6 text-white text-[14px] max-xl:text-[11px] max-xl:left-4 max-md:text-[7px] max-md:left-3" class="player-rating">${player.rating}</p>
+                <p class="absolute top-6 left-6 text-white text-[10px] max-xl:text-[7px] max-xl:left-4 max-xl:top-4 max-md:text-[4px] max-md:left-3 max-md:top-3 z-20 player-position">${player.position}</p>
+            `;
+        }else if (selectedCard.dataset.card === 'rp3') {
+            selectedCard.innerHTML = `
+                <img src="img/Cards/BASIC.png" alt="Basic Image" class="w-28 card-image">
+                <img src="${player.img}" alt="Top Image" class=" absolute top-0 left-0">
+                <p class="absolute top-1 left-6 text-white text-[14px] max-xl:text-[11px] max-xl:left-4 max-md:text-[7px] max-md:left-3" class="player-rating">${player.rating}</p>
+                <p class="absolute top-6 left-6 text-white text-[10px] max-xl:text-[7px] max-xl:left-4 max-xl:top-4 max-md:text-[4px] max-md:left-3 max-md:top-3 z-20 player-position">${player.position}</p>
+            `;
+        }else if (selectedCard.dataset.card === 'rp4') {
+            selectedCard.innerHTML = `
+                <img src="img/Cards/BASIC.png" alt="Basic Image" class="w-28 card-image">
+                <img src="${player.img}" alt="Top Image" class=" absolute top-0 left-0">
+                <p class="absolute top-1 left-6 text-white text-[14px] max-xl:text-[11px] max-xl:left-4 max-md:text-[7px] max-md:left-3" class="player-rating">${player.rating}</p>
+                <p class="absolute top-6 left-6 text-white text-[10px] max-xl:text-[7px] max-xl:left-4 max-xl:top-4 max-md:text-[4px] max-md:left-3 max-md:top-3 z-20 player-position">${player.position}</p>
+            `;
+        }else if (selectedCard.dataset.card === 'rp5') {
+            selectedCard.innerHTML = `
+                <img src="img/Cards/BASIC.png" alt="Basic Image" class="w-28 card-image">
+                <img src="${player.img}" alt="Top Image" class=" absolute top-0 left-0">
+                <p class="absolute top-1 left-6 text-white text-[14px] max-xl:text-[11px] max-xl:left-4 max-md:text-[7px] max-md:left-3" class="player-rating">${player.rating}</p>
+                <p class="absolute top-6 left-6 text-white text-[10px] max-xl:text-[7px] max-xl:left-4 max-xl:top-4 max-md:text-[4px] max-md:left-3 max-md:top-3 z-20 player-position">${player.position}</p>
+            `;
+        }else if (selectedCard.dataset.card === 'rp6') {
+            selectedCard.innerHTML = `
+                <img src="img/Cards/BASIC.png" alt="Basic Image" class="w-28 card-image">
+                <img src="${player.img}" alt="Top Image" class=" absolute top-0 left-0">
+                <p class="absolute top-1 left-6 text-white text-[14px] max-xl:text-[11px] max-xl:left-4 max-md:text-[7px] max-md:left-3" class="player-rating">${player.rating}</p>
+                <p class="absolute top-6 left-6 text-white text-[10px] max-xl:text-[7px] max-xl:left-4 max-xl:top-4 max-md:text-[4px] max-md:left-3 max-md:top-3 z-20 player-position">${player.position}</p>
+            `;
+        }else if (selectedCard.dataset.card === 'rp7') {
+            selectedCard.innerHTML = `
+                <img src="img/Cards/BASIC.png" alt="Basic Image" class="w-28 card-image">
+                <img src="${player.img}" alt="Top Image" class=" absolute top-0 left-0">
+                <p class="absolute top-1 left-6 text-white text-[14px] max-xl:text-[11px] max-xl:left-4 max-md:text-[7px] max-md:left-3" class="player-rating">${player.rating}</p>
+                <p class="absolute top-6 left-6 text-white text-[10px] max-xl:text-[7px] max-xl:left-4 max-xl:top-4 max-md:text-[4px] max-md:left-3 max-md:top-3 z-20 player-position">${player.position}</p>
+            `;
+        }else if (selectedCard.dataset.card === 'rp8') {
+            selectedCard.innerHTML = `
+                <img src="img/Cards/BASIC.png" alt="Basic Image" class="w-28 card-image">
+                <img src="${player.img}" alt="Top Image" class=" absolute top-0 left-0">
+                <p class="absolute top-1 left-6 text-white text-[14px] max-xl:text-[11px] max-xl:left-4 max-md:text-[7px] max-md:left-3" class="player-rating">${player.rating}</p>
+                <p class="absolute top-6 left-6 text-white text-[10px] max-xl:text-[7px] max-xl:left-4 max-xl:top-4 max-md:text-[4px] max-md:left-3 max-md:top-3 z-20 player-position">${player.position}</p>
+            `;
         }
         document.getElementById('player-modal').classList.add('hidden');
     }
@@ -640,3 +696,20 @@ function agreement() {
     `;
     }
 }
+
+//----------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------
+
+const replace = document.getElementById('replace');
+const replacemodal = document.getElementById('replace-modal');
+const closereplace = document.getElementById('close-replace')
+
+replace.addEventListener('click', () => {
+    replacemodal.classList.remove("hidden");
+});
+
+closereplace.addEventListener('click', () =>{
+    replacemodal.classList.add("hidden")
+});
+

@@ -100,6 +100,7 @@
                 </div>
             </div>
 
+            <button id="replace" class="absolute top-[90%] right-[90%] text-white bg-yellow-400 hover:bg-yellow-500 pr-4 pl-4 pt-2 pb-2 rounded-xl ">replace</button>
 
 
             <!-- Modal -->
@@ -116,6 +117,51 @@
                     <div id="players-list" class="max-h-[400px] overflow-y-auto">
                         <!-- Players will be inserted here dynamically -->
                     </div>
+                </div>
+            </div>
+
+            <!-- replace player modal -->
+            <div id="replace-modal" class="hidden fixed inset-0 bg-gray-800 bg-opacity-70 z-30 flex items-center justify-center">
+                <div class="flex flex-row bg-black p-8 rounded-xl border border-red-600">
+                    <div class="relative col-start-6 row-start-10 transition duration-300 ease-in-out hover:scale-125 card-image w-28"
+                        data-card="rp1">
+                        <img class="card-image" src="img/Cards/BASIC.png" alt="">
+                    </div>
+
+                    <div class="relative col-start-5 row-start-8 transition duration-300 ease-in-out hover:scale-125 card-image w-28"
+                        data-card="rp2">
+                        <img class="card-image" src="img/Cards/BASIC.png" alt="">
+                    </div>
+
+                    <div class="relative col-start-7 row-start-8 transition duration-300 ease-in-out hover:scale-125 card-image w-28"
+                        data-card="rp3">
+                        <img class="card-image" src="img/Cards/BASIC.png" alt="">
+                    </div>
+
+                    <div class="relative col-start-9 row-start-9 transition duration-300 ease-in-out hover:scale-125 card-image w-28"
+                        data-card="rp4">
+                        <img class="card-image" src="img/Cards/BASIC.png" alt="">
+                    </div>
+                    <div class="relative col-start-3 row-start-9 transition duration-300 ease-in-out hover:scale-125 card-image w-28"
+                        data-card="rp5">
+                        <img class="card-image" src="img/Cards/BASIC.png" alt="">
+                    </div>
+
+                    <div class="relative col-start-4 row-start-5 transition duration-300 ease-in-out hover:scale-125 card-image w-28"
+                        data-card="rp6">
+                        <img class="card-image" src="img/Cards/BASIC.png" alt="">
+                    </div>
+
+                    <div class="relative col-start-6 row-start-5 transition duration-300 ease-in-out hover:scale-125 card-image w-28"
+                        data-card="rp7">
+                        <img class="card-image" src="img/Cards/BASIC.png" alt="">
+                    </div>
+
+                    <div class="relative col-start-8 row-start-5 transition duration-300 ease-in-out hover:scale-125 card-image w-28"
+                        data-card="rp8">
+                        <img class="card-image" src="img/Cards/BASIC.png" alt="">
+                    </div>
+                    <button id="close-replace" class="bg-red-600 text-white p-2 pr-4 pl-4 hover:bg-red-400 rounded-lg">Close</button>
                 </div>
             </div>
 
@@ -214,7 +260,7 @@
                     <p class="text-7xl text-red-400">0</p>
                     <p>over</p>
                 </section>
-                <section  id="playerAgree" class="text-white flex flex-row flex-wrap">
+                <section id="playerAgree" class="text-white flex flex-row flex-wrap">
                     <p class="text-7xl text-white">0%</p>
                     <p>Agreement</p>
                 </section>
@@ -291,32 +337,32 @@
                             switch (selectedCard) {
                                 case 'image4':
                                     img.src = 'img/Cards/TOTY.png';
-                                    check=0;
+                                    check = 0;
                                     overAllRating();
                                     break;
                                 case 'image5':
                                     img.src = 'img/Cards/TOTS.gif';
-                                    check=0;
+                                    check = 0;
                                     overAllRating();
                                     break;
                                 case 'image6':
                                     img.src = 'img/Cards/GoldBall.gif';
-                                    check=0;
+                                    check = 0;
                                     overAllRating();
                                     break;
                                 case 'image7':
                                     img.src = 'img/Cards/LEAGE.gif';
-                                    check=0;
+                                    check = 0;
                                     overAllRating();
                                     break;
                                 case 'image8':
                                     img.src = 'img/Cards/Rivals.gif';
-                                    check=0;
+                                    check = 0;
                                     overAllRating();
                                     break;
                                 case 'image9':
                                     img.src = 'img/Cards/Icon.gif';
-                                    check=0;
+                                    check = 0;
                                     overAllRating();
                                     break;
                                 default:
