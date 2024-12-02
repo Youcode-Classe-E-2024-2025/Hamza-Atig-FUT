@@ -322,9 +322,9 @@ document.getElementById('players-list').addEventListener('click', (e) => {
         if (selectedCard.dataset.card === 'GK') {
             selectedCard.innerHTML = `
                 <img src="img/Cards/BASIC.png" alt="Basic Image" class="w-28 card-image">
-                <img src="${player.img}" alt="Top Image" class="top-0 -left-0 -mt-24 ml-3 w-20 z-10">
-                <p class="absolute text-white text-[14px] -mt-[86px] ml-[26px]" class="player-rating">${player.rating}</p>
-                <p class="absolute text-white text-[10px] -mt-[70px] ml-[26px] z-20 player-position">${player.position}</p>
+                <img src="${player.img}" alt="Top Image" class=" absolute top-0 left-0">
+                <p class="absolute top-1 left-6 text-white text-[14px]" class="player-rating">${player.rating}</p>
+                <p class="absolute top-6 left-6 text-white text-[10px] z-20 player-position">${player.position}</p>
             `;
             if (player.position === 'GK') {
                 agreegk=player.rating/11;
@@ -338,9 +338,9 @@ document.getElementById('players-list').addEventListener('click', (e) => {
         } else if (selectedCard.dataset.card === 'ST') {
             selectedCard.innerHTML = `
                 <img src="img/Cards/BASIC.png" alt="Basic Image" class="w-28 card-image">
-                <img src="${player.img}" alt="Top Image" class="top-0 -left-0 -mt-24 ml-3 w-20 z-10">
-                <p class="absolute text-white text-[14px] -mt-[86px] ml-[26px]" class="player-rating">${player.rating}</p>
-                <p class="absolute text-white text-[10px] -mt-[70px] ml-[26px] z-20 player-position">${player.position}</p>
+                <img src="${player.img}" alt="Top Image" class=" absolute top-0 left-0">
+                <p class="absolute top-1 left-6 text-white text-[14px]" class="player-rating">${player.rating}</p>
+                <p class="absolute top-6 left-6 text-white text-[10px] z-20 player-position">${player.position}</p>
             `;
             if (player.position === 'ST') {
                 agreest=player.rating/11;
@@ -355,9 +355,9 @@ document.getElementById('players-list').addEventListener('click', (e) => {
         } else if (selectedCard.dataset.card === 'CM1') {
             selectedCard.innerHTML = `
                 <img src="img/Cards/BASIC.png" alt="Basic Image" class="w-28 card-image">
-                <img src="${player.img}" alt="Top Image" class="top-0 -left-0 -mt-24 ml-3 w-20 z-10">
-                <p class="absolute text-white text-[14px] -mt-[86px] ml-[26px]" class="player-rating">${player.rating}</p>
-                <p class="absolute text-white text-[10px] -mt-[70px] ml-[26px] z-20 player-position">${player.position}</p>
+                <img src="${player.img}" alt="Top Image" class=" absolute top-0 left-0">
+                <p class="absolute top-1 left-6 text-white text-[14px]" class="player-rating">${player.rating}</p>
+                <p class="absolute top-6 left-6 text-white text-[10px] z-20 player-position">${player.position}</p>
             `;
             if (player.position === 'CM') {
                 agreecm1=player.rating/11;
@@ -371,9 +371,9 @@ document.getElementById('players-list').addEventListener('click', (e) => {
         } else if (selectedCard.dataset.card === 'CM2') {
             selectedCard.innerHTML = `
                 <img src="img/Cards/BASIC.png" alt="Basic Image" class="w-28 card-image">
-                <img src="${player.img}" alt="Top Image" class="top-0 -left-0 -mt-24 ml-3 w-20 z-10">
-                <p class="absolute text-white text-[14px] -mt-[86px] ml-[26px]" class="player-rating">${player.rating}</p>
-                <p class="absolute text-white text-[10px] -mt-[70px] ml-[26px] z-20 player-position">${player.position}</p>
+                <img src="${player.img}" alt="Top Image" class=" absolute top-0 left-0">
+                <p class="absolute top-1 left-6 text-white text-[14px]" class="player-rating">${player.rating}</p>
+                <p class="absolute top-6 left-6 text-white text-[10px] z-20 player-position">${player.position}</p>
             `;
             if (player.position === 'CM') {
                 agreecm2=player.rating/11;
@@ -387,9 +387,9 @@ document.getElementById('players-list').addEventListener('click', (e) => {
         } else if (selectedCard.dataset.card === 'CM3') {
             selectedCard.innerHTML = `
                 <img src="img/Cards/BASIC.png" alt="Basic Image" class="w-28 card-image">
-                <img src="${player.img}" alt="Top Image" class="top-0 -left-0 -mt-24 ml-3 w-20 z-10">
-                <p class="absolute text-white text-[14px] -mt-[86px] ml-[26px]" class="player-rating">${player.rating}</p>
-                <p class="absolute text-white text-[10px] -mt-[70px] ml-[26px] z-20 player-position">${player.position}</p>
+                <img src="${player.img}" alt="Top Image" class=" absolute top-0 left-0">
+                <p class="absolute top-1 left-6 text-white text-[14px]" class="player-rating">${player.rating}</p>
+                <p class="absolute top-6 left-6 text-white text-[10px] z-20 player-position">${player.position}</p>
             `;
             if (player.position === 'CM') {
                 agreecm3=player.rating/11;
@@ -403,9 +403,9 @@ document.getElementById('players-list').addEventListener('click', (e) => {
         } else if (selectedCard.dataset.card === 'CB1') {
             selectedCard.innerHTML = `
                 <img src="img/Cards/BASIC.png" alt="Basic Image" class="w-28 card-image">
-                <img src="${player.img}" alt="Top Image" class="top-0 -left-0 -mt-24 ml-3 w-20 z-10">
-                <p class="absolute text-white text-[14px] -mt-[86px] ml-[26px]" class="player-rating">${player.rating}</p>
-                <p class="absolute text-white text-[10px] -mt-[70px] ml-[26px] z-20 player-position">${player.position}</p>
+                <img src="${player.img}" alt="Top Image" class=" absolute top-0 left-0">
+                <p class="absolute top-1 left-6 text-white text-[14px]" class="player-rating">${player.rating}</p>
+                <p class="absolute top-6 left-6 text-white text-[10px] z-20 player-position">${player.position}</p>
             `;
             if (player.position === 'CB') {
                 agreecb1=player.rating/11;
@@ -419,9 +419,9 @@ document.getElementById('players-list').addEventListener('click', (e) => {
         } else if (selectedCard.dataset.card === 'CB2') {
             selectedCard.innerHTML = `
                 <img src="img/Cards/BASIC.png" alt="Basic Image" class="w-28 card-image">
-                <img src="${player.img}" alt="Top Image" class="top-0 -left-0 -mt-24 ml-3 w-20 z-10">
-                <p class="absolute text-white text-[14px] -mt-[86px] ml-[26px]" class="player-rating">${player.rating}</p>
-                <p class="absolute text-white text-[10px] -mt-[70px] ml-[26px] z-20 player-position">${player.position}</p>
+                <img src="${player.img}" alt="Top Image" class=" absolute top-0 left-0">
+                <p class="absolute top-1 left-6 text-white text-[14px]" class="player-rating">${player.rating}</p>
+                <p class="absolute top-6 left-6 text-white text-[10px] z-20 player-position">${player.position}</p>
             `;
             if (player.position === 'CB') {
                 agreecb2=player.rating/11;
@@ -435,9 +435,9 @@ document.getElementById('players-list').addEventListener('click', (e) => {
         } else if (selectedCard.dataset.card === 'RW') {
             selectedCard.innerHTML = `
                 <img src="img/Cards/BASIC.png" alt="Basic Image" class="w-28 card-image">
-                <img src="${player.img}" alt="Top Image" class="top-0 -left-0 -mt-24 ml-3 w-20 z-10">
-                <p class="absolute text-white text-[14px] -mt-[86px] ml-[26px]" class="player-rating">${player.rating}</p>
-                <p class="absolute text-white text-[10px] -mt-[70px] ml-[26px] z-20 player-position">${player.position}</p>
+                <img src="${player.img}" alt="Top Image" class=" absolute top-0 left-0">
+                <p class="absolute top-1 left-6 text-white text-[14px]" class="player-rating">${player.rating}</p>
+                <p class="absolute top-6 left-6 text-white text-[10px] z-20 player-position">${player.position}</p>
             `;
             if (player.position === 'RW') {
                 agreerw=player.rating/11;
@@ -451,9 +451,9 @@ document.getElementById('players-list').addEventListener('click', (e) => {
         } else if (selectedCard.dataset.card === 'LW') {
             selectedCard.innerHTML = `
                 <img src="img/Cards/BASIC.png" alt="Basic Image" class="w-28 card-image">
-                <img src="${player.img}" alt="Top Image" class="top-0 -left-0 -mt-24 ml-3 w-20 z-10">
-                <p class="absolute text-white -mt-[86px] text-[14px] ml-[26px]" class="player-rating">${player.rating}</p>
-                <p class="absolute text-white -mt-[70px] text-[10px] ml-[26px] z-20 player-position">${player.position}</p>
+                <img src="${player.img}" alt="Top Image" class=" absolute top-0 left-0">
+                <p class="absolute top-1 left-6 text-white text-[14px]" class="player-rating">${player.rating}</p>
+                <p class="absolute top-6 left-6 text-white text-[10px] z-20 player-position">${player.position}</p>
             `;
             if (player.position === 'LW') {
                 agreelw=player.rating/11;
@@ -467,9 +467,9 @@ document.getElementById('players-list').addEventListener('click', (e) => {
         } else if (selectedCard.dataset.card === 'LB') {
             selectedCard.innerHTML = `
                 <img src="img/Cards/BASIC.png" alt="Basic Image" class="w-28 card-image">
-                <img src="${player.img}" alt="Top Image" class="top-0 -left-0 -mt-24 ml-3 w-20 z-10">
-                <p class="absolute text-white text-[14px] -mt-[86px] ml-[26px]" class="player-rating">${player.rating}</p>
-                <p class="absolute text-white text-[10px] -mt-[70px] ml-[26px] z-20 player-position">${player.position}</p>
+                <img src="${player.img}" alt="Top Image" class=" absolute top-0 left-0">
+                <p class="absolute top-1 left-6 text-white text-[14px]" class="player-rating">${player.rating}</p>
+                <p class="absolute top-6 left-6 text-white text-[10px] z-20 player-position">${player.position}</p>
             `;
             if (player.position === 'LB') {
                 agreelb=player.rating/11;
@@ -483,9 +483,9 @@ document.getElementById('players-list').addEventListener('click', (e) => {
         } else if (selectedCard.dataset.card === 'RB') {
             selectedCard.innerHTML = `
                 <img src="img/Cards/BASIC.png" alt="Basic Image" class="w-28 card-image">
-                <img src="${player.img}" alt="Top Image" class="top-0 -left-0 -mt-24 ml-3 w-20 z-10">
-                <p class="absolute text-white text-[14px] -mt-[86px] ml-[26px]" class="player-rating">${player.rating}</p>
-                <p class="absolute text-white text-[10px] -mt-[70px] ml-[26px] z-20 player-position">${player.position}</p>
+                <img src="${player.img}" alt="Top Image" class=" absolute top-0 left-0">
+                <p class="absolute top-1 left-6 text-white text-[14px]" class="player-rating">${player.rating}</p>
+                <p class="absolute top-6 left-6 text-white text-[10px] z-20 player-position">${player.position}</p>
             `;
             if (player.position === 'RB') {
                 agreerb=player.rating/11;
@@ -595,6 +595,7 @@ function overAllRating() {
         <p>over</p>
     `;
     }
+    agreement();
 }
 
 function agreement() {
