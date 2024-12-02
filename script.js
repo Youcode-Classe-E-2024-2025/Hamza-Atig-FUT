@@ -270,11 +270,9 @@ fetch('playersData.json')
         if (player) {
             const playerDetailsModal = document.getElementById('player-details-modal');
             const playerDetails = document.getElementById('player-details');
-    
-            // Show the modal by removing the 'hidden' class
+        
             playerDetailsModal.classList.remove('hidden');
-    
-            // Inject player data into modal content
+        
             playerDetails.innerHTML = `
                 <h2 class="text-2xl text-white font-bold mt-2 mb-2">${player.name}</h2>
                 <div class="flex flex-row gap-4 justify-evenly align-middle items-center mb-2">
@@ -283,18 +281,64 @@ fetch('playersData.json')
                         <img src="${player.img}" alt="Top Image" class="top-0 -left-0 -mt-24 ml-3 w-20 z-10">
                     </div>
                     <div>
-                        <p class="text-sm text-white">Position: ${player.position}</p>
-                        <p class="text-sm text-white">Rating: ${player.rating}</p>
-                        <p class="text-sm text-white">Pace: ${player.pace}</p>
-                        <p class="text-sm text-white">Shot: ${player.shot}</p>
-                        <p class="text-sm text-white">Pass: ${player.pass}</p>
-                        <p class="text-sm text-white">Defense: ${player.defense}</p>
-                        <p class="text-sm text-white">Dribble: ${player.dribble}</p>
-                        <p class="text-sm text-white">Physical: ${player.physical}</p>
+                        <p class="text-sm text-white">Position: <span id="position">${player.position}</span></p>
+                        <p class="text-sm text-white">Rating: <span id="rating">${player.rating}</span></p>
+                        <p class="text-sm text-white">Pace: <span id="pace">${player.pace}</span></p>
+                        <p class="text-sm text-white">Shot: <span id="shot">${player.shot}</span></p>
+                        <p class="text-sm text-white">Pass: <span id="pass">${player.pass}</span></p>
+                        <p class="text-sm text-white">Defense: <span id="defense">${player.defense}</span></p>
+                        <p class="text-sm text-white">Dribble: <span id="dribble">${player.dribble}</span></p>
+                        <p class="text-sm text-white">Physical: <span id="physical">${player.physical}</span></p>
+                        <button id="editButton" class="text-sm text-blue-500">Edit</button>
                     </div>
                 </div>
             `;
     
+            const editButton = document.getElementById('editButton');
+            editButton.addEventListener('click', function() {
+                // edit player details
+                document.getElementById('position').innerHTML = `<input type="text" id="editPosition" value="${player.position}" class="px-4 py-2 rounded-lg text-gray-800 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">`;
+                document.getElementById('rating').innerHTML = `<input type="number" id="editRating" value="${player.rating}" class="px-4 py-2 rounded-lg text-gray-800 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">`;
+                document.getElementById('pace').innerHTML = `<input type="number" id="editPace" value="${player.pace}" class="px-4 py-2 rounded-lg text-gray-800 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">`;
+                document.getElementById('shot').innerHTML = `<input type="number" id="editShot" value="${player.shot}" class="px-4 py-2 rounded-lg text-gray-800 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">`;
+                document.getElementById('pass').innerHTML = `<input type="number" id="editPass" value="${player.pass}" class="px-4 py-2 rounded-lg text-gray-800 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">`;
+                document.getElementById('defense').innerHTML = `<input type="number" id="editDefense" value="${player.defense}" class="px-4 py-2 rounded-lg text-gray-800 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">`;
+                document.getElementById('dribble').innerHTML = `<input type="number" id="editDribble" value="${player.dribble}" class="px-4 py-2 rounded-lg text-gray-800 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">`;
+                document.getElementById('physical').innerHTML = `<input type="number" id="editPhysical" value="${player.physical}" class="px-4 py-2 rounded-lg text-gray-800 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">`;
+
+                // save button
+                editButton.innerHTML = 'Save';
+                editButton.classList.remove('text-blue-500');
+                editButton.classList.add('text-green-500');
+    
+                // Change button action to save
+                editButton.removeEventListener('click', arguments.callee); // Remove the original edit action
+                editButton.addEventListener('click', function() {
+                    // Save the edited values
+                    const updatedPlayer = {
+                        ...player,
+                        position: document.getElementById('editPosition').value,
+                        rating: document.getElementById('editRating').value,
+                        pace: document.getElementById('editPace').value,
+                        shot: document.getElementById('editShot').value,
+                        pass: document.getElementById('editPass').value,
+                        defense: document.getElementById('editDefense').value,
+                        dribble: document.getElementById('editDribble').value,
+                        physical: document.getElementById('editPhysical').value
+                    };
+    
+                    // Update the localStorage (or your data source)
+                    localStorage.setItem('player_' + player.name, JSON.stringify(updatedPlayer));
+    
+                    // Update playersData to reflect the changes
+                    playersData = playersData.map(p => p.name === player.name ? updatedPlayer : p);
+    
+                    // Close the modal
+                    playerDetailsModal.classList.add('hidden');
+
+                    viewPlayerDetails(player.name);
+                });
+            });
         }
     }
     
