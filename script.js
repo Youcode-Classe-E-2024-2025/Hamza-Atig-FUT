@@ -297,7 +297,20 @@ fetch('playersData.json')
             const editButton = document.getElementById('editButton');
             editButton.addEventListener('click', function() {
                 // edit player details
-                document.getElementById('position').innerHTML = `<input type="text" id="editPosition" value="${player.position}" class="px-4 py-2 rounded-lg text-gray-800 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">`;
+                const positionSelect = document.getElementById('position');
+                const editPositionSelect = document.createElement('select');
+                editPositionSelect.id = 'editPosition';
+                editPositionSelect.classList.add('px-4', 'py-2', 'rounded-lg', 'text-gray-800', 'border', 'border-gray-300', 'focus:outline-none', 'focus:ring-2', 'focus:ring-blue-500');
+                ['GK', 'RB', 'LB', 'CB', 'CM', 'LW', 'RW', 'ST'].forEach(position => {
+                    const option = document.createElement('option');
+                    option.value = position;
+                    option.textContent = position;
+                    if (position === player.position) {
+                        option.selected = true;
+                    }
+                    editPositionSelect.appendChild(option);
+                });
+                positionSelect.parentNode.replaceChild(editPositionSelect, positionSelect);
                 document.getElementById('rating').innerHTML = `<input type="number" id="editRating" value="${player.rating}" class="px-4 py-2 rounded-lg text-gray-800 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">`;
                 document.getElementById('pace').innerHTML = `<input type="number" id="editPace" value="${player.pace}" class="px-4 py-2 rounded-lg text-gray-800 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">`;
                 document.getElementById('shot').innerHTML = `<input type="number" id="editShot" value="${player.shot}" class="px-4 py-2 rounded-lg text-gray-800 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">`;
