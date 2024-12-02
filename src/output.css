@@ -1576,6 +1576,11 @@ video {
   .max-md\:text-\[7px\] {
     font-size: 7px;
   }
+
+  .max-md\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
 }
 
 @media not all and (min-width: 640px) {

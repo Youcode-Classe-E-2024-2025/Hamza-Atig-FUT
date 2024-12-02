@@ -317,9 +317,9 @@
                     <option value="default" selected>Basic Card</option>
                     <option value="image4">TOTY Card</option>
                     <option value="image5">TOTS Card</option>
-                    <option value="image6">Gold Ball Card</option>
                     <option value="image7">LEAGE Card</option>
                     <option value="image8">Rivals Card</option>
+                    <option value="image6">Gold Ball Card</option>
                     <option value="image9">Icon Card</option>
                 </select>
 
@@ -338,35 +338,42 @@
                                 case 'image4':
                                     img.src = 'img/Cards/TOTY.png';
                                     check = 0;
+                                    cardagree =0;
                                     overAllRating();
                                     break;
                                 case 'image5':
                                     img.src = 'img/Cards/TOTS.gif';
                                     check = 0;
+                                    cardagree =0;
                                     overAllRating();
                                     break;
                                 case 'image6':
                                     img.src = 'img/Cards/GoldBall.gif';
                                     check = 0;
+                                    cardagree =7;
                                     overAllRating();
                                     break;
                                 case 'image7':
                                     img.src = 'img/Cards/LEAGE.gif';
                                     check = 0;
+                                    cardagree =0;
                                     overAllRating();
                                     break;
                                 case 'image8':
                                     img.src = 'img/Cards/Rivals.gif';
                                     check = 0;
+                                    cardagree =0;
                                     overAllRating();
                                     break;
                                 case 'image9':
                                     img.src = 'img/Cards/Icon.gif';
                                     check = 0;
+                                    cardagree =10;
                                     overAllRating();
                                     break;
                                 default:
                                     img.src = 'img/Cards/Basic.png';
+                                    cardagree =0;
                                     overAllRating();
                                     break;
                             }

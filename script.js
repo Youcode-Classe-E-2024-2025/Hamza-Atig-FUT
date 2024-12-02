@@ -26,6 +26,7 @@ let agreelb = 0;
 let agreerb = 0;
 let agreecb1 = 0;
 let agreecb2 = 0;
+let cardagree = 0;
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -633,22 +634,22 @@ function overAllRating() {
 
     if (over <= 40) {
         document.getElementById("playerOver").innerHTML = `
-        <p class="text-7xl text-red-400">${over.toFixed(2)}</p>
+        <p class="text-7xl max-md:text-2xl text-red-400">${over.toFixed(2)}</p>
         <p>over</p>
     `;
     }else if (over > 40 && over < 80){
         document.getElementById("playerOver").innerHTML = `
-        <p class="text-7xl text-yellow-400">${over.toFixed(2)}</p>
+        <p class="text-7xl max-md:text-2xl text-yellow-400">${over.toFixed(2)}</p>
         <p>over</p>
     `;
     }else if (over >= 80 && over < 100){
         document.getElementById("playerOver").innerHTML = `
-        <p class="text-7xl text-green-400">${over.toFixed(2)}</p>
+        <p class="text-7xl max-md:text-2xl text-green-400">${over.toFixed(2)}</p>
         <p>over</p>
     `;
     }else if (over >= 100){
         document.getElementById("playerOver").innerHTML = `
-        <p class="text-7xl text-blue-400">${over.toFixed(2)}</p>
+        <p class="text-7xl max-md:text-2xl text-blue-400">${over.toFixed(2)}</p>
         <p>over</p>
     `;
     }
@@ -668,30 +669,30 @@ function managerdef(){
 function agreement() {
     if (check == 0) {
         if (check1 == 0){
-            agree = (Number(agreegk) + Number(agreest) + Number(agreecm1) + Number(agreecm2) + Number(agreecm3) + Number(agreecb1) + Number(agreecb2) + Number(agreerw) + Number(agreelw) + Number(agreelb) + Number(agreerb));
+            agree = cardagree+(Number(agreegk) + Number(agreest) + Number(agreecm1) + Number(agreecm2) + Number(agreecm3) + Number(agreecb1) + Number(agreecb2) + Number(agreerw) + Number(agreelw) + Number(agreelb) + Number(agreerb));
         } else if (check1 = 1){
-            agree = 8+(Number(agreegk) + Number(agreest) + Number(agreecm1) + Number(agreecm2) + Number(agreecm3) + Number(agreecb1) + Number(agreecb2) + Number(agreerw) + Number(agreelw) + Number(agreelb) + Number(agreerb));
+            agree = cardagree+8+(Number(agreegk) + Number(agreest) + Number(agreecm1) + Number(agreecm2) + Number(agreecm3) + Number(agreecb1) + Number(agreecb2) + Number(agreerw) + Number(agreelw) + Number(agreelb) + Number(agreerb));
         }
     } else if (check == 1) {
         if (check1 == 0){
-            agree = 12+(Number(agreegk) + Number(agreest) + Number(agreecm1) + Number(agreecm2) + Number(agreecm3) + Number(agreecb1) + Number(agreecb2) + Number(agreerw) + Number(agreelw) + Number(agreelb) + Number(agreerb));
+            agree = cardagree+12+(Number(agreegk) + Number(agreest) + Number(agreecm1) + Number(agreecm2) + Number(agreecm3) + Number(agreecb1) + Number(agreecb2) + Number(agreerw) + Number(agreelw) + Number(agreelb) + Number(agreerb));
         } else if (check1 = 1){
-            agree = 20+(Number(agreegk) + Number(agreest) + Number(agreecm1) + Number(agreecm2) + Number(agreecm3) + Number(agreecb1) + Number(agreecb2) + Number(agreerw) + Number(agreelw) + Number(agreelb) + Number(agreerb));
+            agree = cardagree+20+(Number(agreegk) + Number(agreest) + Number(agreecm1) + Number(agreecm2) + Number(agreecm3) + Number(agreecb1) + Number(agreecb2) + Number(agreerw) + Number(agreelw) + Number(agreelb) + Number(agreerb));
         }
     }
     if (agree < 0 ) {
         document.getElementById("playerAgree").innerHTML = `
-        <p id="playerAgree" class="text-7xl text-red-600">${agree.toFixed(0)}%</p>
+        <p id="playerAgree" class="text-7xl max-md:text-2xl text-red-600">${agree.toFixed(0)}%</p>
         <p>Agreement</p>
     `;
     } else if (agree > 0 && agree < 100) {
         document.getElementById("playerAgree").innerHTML = `
-        <p id="playerAgree" class="text-7xl text-white">${agree.toFixed(0)}%</p>
+        <p id="playerAgree" class="text-7xl max-md:text-2xl text-white">${agree.toFixed(0)}%</p>
         <p>Agreement</p>
     `;
     }else if (agree > 100) {
         document.getElementById("playerAgree").innerHTML = `
-        <p id="playerAgree" class="text-7xl text-purple-500">100%</p>
+        <p id="playerAgree" class="text-7xl max-md:text-2xl text-purple-500">100%</p>
         <p>Agreement</p>
     `;
     }
