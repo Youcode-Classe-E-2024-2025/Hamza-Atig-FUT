@@ -910,6 +910,10 @@ video {
   width: 100vw;
 }
 
+.w-2 {
+  width: 0.5rem;
+}
+
 .max-w-full {
   max-width: 100%;
 }
@@ -1304,6 +1308,11 @@ video {
 
 .text-\[60\] {
   color: 60;
+}
+
+.text-purple-500 {
+  --tw-text-opacity: 1;
+  color: rgb(168 85 247 / var(--tw-text-opacity, 1));
 }
 
 .shadow-lg {

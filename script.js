@@ -13,6 +13,7 @@ let CB1Rating = 0;
 let CB2Rating = 0;
 
 let check = 0;
+let check1 = 0;
 
 let agreegk = 0;
 let agreest = 0;
@@ -598,11 +599,29 @@ function overAllRating() {
     agreement();
 }
 
+function manager(){
+    agree+=10;
+    agreement();
+}
+
+function managerdef(){
+    agree-=10;
+    agreement();
+}
+
 function agreement() {
     if (check == 0) {
-        agree = (Number(agreegk) + Number(agreest) + Number(agreecm1) + Number(agreecm2) + Number(agreecm3) + Number(agreecb1) + Number(agreecb2) + Number(agreerw) + Number(agreelw) + Number(agreelb) + Number(agreerb));
+        if (check1 == 0){
+            agree = (Number(agreegk) + Number(agreest) + Number(agreecm1) + Number(agreecm2) + Number(agreecm3) + Number(agreecb1) + Number(agreecb2) + Number(agreerw) + Number(agreelw) + Number(agreelb) + Number(agreerb));
+        } else if (check1 = 1){
+            agree = 8+(Number(agreegk) + Number(agreest) + Number(agreecm1) + Number(agreecm2) + Number(agreecm3) + Number(agreecb1) + Number(agreecb2) + Number(agreerw) + Number(agreelw) + Number(agreelb) + Number(agreerb));
+        }
     } else if (check == 1) {
-        agree = 12+(Number(agreegk) + Number(agreest) + Number(agreecm1) + Number(agreecm2) + Number(agreecm3) + Number(agreecb1) + Number(agreecb2) + Number(agreerw) + Number(agreelw) + Number(agreelb) + Number(agreerb));
+        if (check1 == 0){
+            agree = 12+(Number(agreegk) + Number(agreest) + Number(agreecm1) + Number(agreecm2) + Number(agreecm3) + Number(agreecb1) + Number(agreecb2) + Number(agreerw) + Number(agreelw) + Number(agreelb) + Number(agreerb));
+        } else if (check1 = 1){
+            agree = 20+(Number(agreegk) + Number(agreest) + Number(agreecm1) + Number(agreecm2) + Number(agreecm3) + Number(agreecb1) + Number(agreecb2) + Number(agreerw) + Number(agreelw) + Number(agreelb) + Number(agreerb));
+        }
     }
     if (agree < 0 ) {
         document.getElementById("playerAgree").innerHTML = `
@@ -616,7 +635,7 @@ function agreement() {
     `;
     }else if (agree > 100) {
         document.getElementById("playerAgree").innerHTML = `
-        <p id="playerAgree" class="text-7xl text-white">100%</p>
+        <p id="playerAgree" class="text-7xl text-purple-500">100%</p>
         <p>Agreement</p>
     `;
     }

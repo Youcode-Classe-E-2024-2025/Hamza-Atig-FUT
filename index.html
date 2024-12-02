@@ -238,10 +238,14 @@
 
                             switch (selectedManager) {
                                 case 'm1':
-                                    newImage.src = 'img/manager/zidane.avif';
+                                    newImage.src = 'img/manager/zidane2.avif';
+                                    check1 = 1;
+                                    agreement();
                                     break;
                                 default:
                                     newImage.src = 'img/Cards/TOTO.gif';
+                                    check1 = 0;
+                                    agreement();
                                     break;
                             }
                             managerContainer.appendChild(newImage);
