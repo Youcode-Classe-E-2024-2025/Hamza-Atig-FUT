@@ -639,8 +639,12 @@ closeModalBtn.addEventListener("click", () => {
     modal.classList.add("hidden");
 });
 
+let counter = 0;
+let counter2 = 0;
+
 playerForm.addEventListener("submit", (e) => {
     e.preventDefault();
+    
 
     const name = document.getElementById("name").value;
     const physique = document.getElementById("physique").value;
@@ -652,6 +656,31 @@ playerForm.addEventListener("submit", (e) => {
     const physical = document.getElementById("physical").value;
     const position = document.getElementById("position").value;
     const playerImage = document.getElementById("playerImage").files[0];
+
+    const name1 = document.getElementById("name")
+    name1.addEventListener('click',()=>{
+        if (name!=0){
+            counter++;
+        }
+        else if (name == 0){
+            counter2++;
+        }
+
+
+    })
+
+    const physique1 = document.getElementById("physique")
+    physique1.addEventListener('click',()=>{
+        if (name!=0){
+            counter++;
+        }
+        else if (name == 0){
+            counter2++;
+        }
+    })
+
+    console.log(counter-counter2)
+
 
     const newPlayer = {
         name: name,
@@ -672,7 +701,6 @@ playerForm.addEventListener("submit", (e) => {
 
     localStorage.setItem("playersData", JSON.stringify(playersData));
 
-    modal.classList.add("hidden");
     playerForm.reset();
 });
 
@@ -683,10 +711,9 @@ playerForm.addEventListener("submit", (e) => {
 
 function overAllRating() {
     
-    if(check==0){
-        over = (Number(goalKeeperRating) + Number(stRating) + Number(CM1Rating) + Number(CM2Rating) + Number(CM3Rating) + Number(CB1Rating) + Number(CB2Rating) + Number(RWRating) + Number(LWRating) + Number(LBRating) + Number(RBRating)) / 10;
-    }else if(check==1){
-        over = 13+(Number(goalKeeperRating) + Number(stRating) + Number(CM1Rating) + Number(CM2Rating) + Number(CM3Rating) + Number(CB1Rating) + Number(CB2Rating) + Number(RWRating) + Number(LWRating) + Number(LBRating) + Number(RBRating)) / 10;
+    over = (Number(goalKeeperRating) + Number(stRating) + Number(CM1Rating) + Number(CM2Rating) + Number(CM3Rating) + Number(CB1Rating) + Number(CB2Rating) + Number(RWRating) + Number(LWRating) + Number(LBRating) + Number(RBRating)) / 10;
+    if(check==1){
+        over += 13;
     }
 
     if (over <= 40) {
@@ -713,15 +740,6 @@ function overAllRating() {
     agreement();
 }
 
-function manager(){
-    agree+=10;
-    agreement();
-}
-
-function managerdef(){
-    agree-=10;
-    agreement();
-}
 
 function agreement() {
     if (check == 0) {
